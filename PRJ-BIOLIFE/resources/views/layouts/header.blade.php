@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
+    
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}">
@@ -18,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main-color.css') }}">
-
 </head>
 <body class="biolife-body">
 
@@ -356,7 +356,9 @@
                                                 <li>
                                                     <div class="minicart-item">
                                                         <div class="thumb">
+
                                                             <a href="#"><img src="{{ asset('storage/images/minicart/pr-01.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+
                                                         </div>
                                                         <div class="left-info">
                                                             <div class="product-title"><a href="#" class="product-name">National Fresh Fruit</a></div>
