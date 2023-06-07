@@ -1,3 +1,4 @@
+{{-- FOOTER --}}
 <footer id="footer" class="footer layout-03">
     <div class="footer-content background-footer-03">
         <div class="container">

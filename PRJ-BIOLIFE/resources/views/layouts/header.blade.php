@@ -10,15 +10,15 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png"/>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }} ">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }} ">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/nice-select.css') }} ">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.min.css') }} ">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }} ">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main-color.css') }} ">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/nice-select.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main-color.css') }}">
 </head>
 <body class="biolife-body">
 
@@ -356,7 +356,9 @@
                                                 <li>
                                                     <div class="minicart-item">
                                                         <div class="thumb">
-                                                            <a href="#"><img src="{{ asset('storage/images/pr-01.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+
+                                                            <a href="#"><img src="{{ asset('storage/images/minicart/pr-01.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+
                                                         </div>
                                                         <div class="left-info">
                                                             <div class="product-title"><a href="#" class="product-name">National Fresh Fruit</a></div>
@@ -378,7 +380,7 @@
                                                 <li>
                                                     <div class="minicart-item">
                                                         <div class="thumb">
-                                                            <a href="#"><img src="{{ asset('storage/images/pr-02.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+                                                            <a href="#"><img src="{{ asset('storage/images/minicart/pr-02.jpg') }}" width="90" height="90" alt="National Fresh"></a>
                                                         </div>
                                                         <div class="left-info">
                                                             <div class="product-title"><a href="#" class="product-name">National Fresh Fruit</a></div>
@@ -400,7 +402,7 @@
                                                 <li>
                                                     <div class="minicart-item">
                                                         <div class="thumb">
-                                                            <a href="#"><img src="{{ asset('storage/images/pr-03.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+                                                            <a href="#"><img src="{{ asset('storage/images/minicart/pr-03.jpg') }}" width="90" height="90" alt="National Fresh"></a>
                                                         </div>
                                                         <div class="left-info">
                                                             <div class="product-title"><a href="#" class="product-name">National Fresh Fruit</a></div>
@@ -422,7 +424,7 @@
                                                 <li>
                                                     <div class="minicart-item">
                                                         <div class="thumb">
-                                                            <a href="#"><img src="{{ asset('storage/images/pr-04.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+                                                            <a href="#"><img src="{{ asset('storage/images/minicart/pr-04.jpg') }}" width="90" height="90" alt="National Fresh"></a>
                                                         </div>
                                                         <div class="left-info">
                                                             <div class="product-title"><a href="#" class="product-name">National Fresh Fruit</a></div>
@@ -444,7 +446,7 @@
                                                 <li>
                                                     <div class="minicart-item">
                                                         <div class="thumb">
-                                                            <a href="#"><img src="{{ asset('storage/images/pr-05.jpg') }}" width="90" height="90" alt="National Fresh"></a>
+                                                            <a href="#"><img src="{{ asset('storage/images/minicart/pr-05.jpg') }}" width="90" height="90" alt="National Fresh"></a>
                                                         </div>
                                                         <div class="left-info">
                                                             <div class="product-title"><a href="#" class="product-name">National Fresh Fruit</a></div>
@@ -545,7 +547,7 @@
                                                                     <div class="contain-product none-overlay">
                                                                         <div class="product-thumb">
                                                                             <a href="#" class="link-to-product">
-                                                                                <img src="{{ asset('storage/images/p-08.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
+                                                                                <img src="{{ asset('storage/images/products/p-08.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                                             </a>
                                                                         </div>
                                                                         <div class="info">
@@ -562,7 +564,7 @@
                                                                     <div class="contain-product none-overlay">
                                                                         <div class="product-thumb">
                                                                             <a href="#" class="link-to-product">
-                                                                                <img src="{{ asset('storage/images/p-11.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
+                                                                                <img src="{{ asset('storage/images/products/p-11.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                                             </a>
                                                                         </div>
                                                                         <div class="info">
@@ -579,7 +581,7 @@
                                                                     <div class="contain-product none-overlay">
                                                                         <div class="product-thumb">
                                                                             <a href="#" class="link-to-product">
-                                                                                <img src="{{ asset('storage/images/p-15.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
+                                                                                <img src="{{ asset('storage/images/products/p-15.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                                             </a>
                                                                         </div>
                                                                         <div class="info">
@@ -600,10 +602,10 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 md-margin-top-9">
                                                         <div class="biolife-brand" >
                                                             <ul class="brands">
-                                                                <li><a href="#"><img src="{{ asset('storage/images/brand-organic.png') }}" width="161" height="136" alt="organic"></a></li>
-                                                                <li><a href="#"><img src="{{ asset('storage/images/brand-explore.png') }}" width="160" height="136" alt="explore"></a></li>
-                                                                <li><a href="#"><img src="{{ asset('storage/images/brand-organic-2.png') }}" width="99" height="136" alt="organic 2"></a></li>
-                                                                <li><a href="#"><img src="{{ asset('storage/images/brand-eco-teas.png') }}" width="164"  height="136" alt="eco teas"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/brand-organic.png') }}" width="161" height="136" alt="organic"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/brand-explore.png') }}" width="160" height="136" alt="explore"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/brand-organic-2.png') }}" width="99" height="136" alt="organic 2"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/brand-eco-teas.png') }}" width="164"  height="136" alt="eco teas"></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -652,10 +654,10 @@
                                                         <div class="biolife-brand vertical md-boder-left-30">
                                                             <h4 class="menu-title">Hot Brand</h4>
                                                             <ul class="brands">
-                                                                <li><a href="#"><img src="{{ asset('storage/images/v-brand-organic.png') }}" width="167" height="74" alt="organic"></a></li>
-                                                                <li><a href="#"><img src="{{ asset('storage/images/v-brand-explore.png') }}" width="167" height="72" alt="explore"></a></li>
-                                                                <li><a href="#"><img src="{{ asset('storage/images/v-brand-organic-2.png') }}" width="167" height="99" alt="organic 2"></a></li>
-                                                                <li><a href="#"><img src="{{ asset('storage/images/v-brand-eco-teas.png') }}" width="167" height="67" alt="eco teas"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/v-brand-organic.png') }}" width="167" height="74" alt="organic"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/v-brand-explore.png') }}" width="167" height="72" alt="explore"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/v-brand-organic-2.png') }}" width="167" height="99" alt="organic 2"></a></li>
+                                                                <li><a href="#"><img src="{{ asset('storage/images/megamenu/v-brand-eco-teas.png') }}" width="167" height="67" alt="eco teas"></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>

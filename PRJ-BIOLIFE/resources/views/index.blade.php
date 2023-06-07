@@ -2,7 +2,6 @@
 @section('content')
         <!-- Main content -->
         <div id="main-content" class="main-content">
-
             <!--Block 01: Main slide-->
             <div class="main-slide block-slider">
                 <ul class="biolife-carousel nav-none-on-mobile" data-slick='{"arrows": true, "dots": false, "slidesMargin": 0, "slidesToShow": 1, "infinite": true, "speed": 800}' >
