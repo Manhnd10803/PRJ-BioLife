@@ -10,7 +10,7 @@
     <nav class="biolife-nav">
         <ul>
             <li class="nav-item"><a href="index-2.html" class="permal-link">Home</a></li>
-            <li class="nav-item"><span class="current-page">Login</span></li>
+            <li class="nav-item"><span class="current-page">Register</span></li>
         </ul>
     </nav>
 </div>
@@ -23,27 +23,38 @@
 
             <div class="row">
 
-                <!--Form Sign In-->
+                <!--Form Sign Up-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="signin-container">
                         <form action="#" name="frm-login" method="post">
+                            <p class="form-row">
+                                <label for="fid-fillname">Full Name:<span class="requite">*</span></label>
+                                <input type="text" id="fid-fillname" name="name" value="" class="txt-input">
+                            </p>
                             <p class="form-row">
                                 <label for="fid-name">Email Address:<span class="requite">*</span></label>
                                 <input type="text" id="fid-name" name="name" value="" class="txt-input">
                             </p>
                             <p class="form-row">
+                                <label for="fid-username">Username:<span class="requite">*</span></label>
+                                <input type="email" id="fid-username" name="name" value="" class="txt-input">
+                            </p>
+                            <p class="form-row">
                                 <label for="fid-pass">Password:<span class="requite">*</span></label>
-                                <input type="email" id="fid-pass" name="email" value="" class="txt-input">
+                                <input type="password" id="fid-pass" name="name" value="" class="txt-input">
+                            </p>
+                            <p class="form-row">
+                                <label for="fid-repass">Repeat Password:<span class="requite">*</span></label>
+                                <input type="password" id="fid-repass" name="name" value="" class="txt-input">
                             </p>
                             <p class="form-row wrap-btn">
-                                <button class="btn btn-submit btn-bold" type="submit">sign in</button>
-                                <a href="forgot-password" class="link-to-help">Forgot your password</a>
+                                <button class="btn btn-submit btn-bold" type="submit">sign up</button>
                             </p>
                         </form>
                     </div>
                 </div>
 
-                <!--Go to Register form-->
+                <!--New customer benefits-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="register-in-container">
                         <div class="intro">
@@ -56,7 +67,6 @@
                                 <li>Track new orders</li>
                                 <li>Save items to your Wishlist</li>
                             </ul>
-                            <a href="{{ route('register') }}" class="btn btn-bold">Create an account</a>
                         </div>
                     </div>
                 </div>

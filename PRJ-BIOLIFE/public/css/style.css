@@ -759,7 +759,7 @@ body{
     width: 100%;
 }
 .hero-background{
-    background-image: url('../images/hero_bg.jpg');
+    background-image: url('../storage/images/hero_bg.jpg');
     height: 194px;
     background-position: center;
     background-repeat: no-repeat;

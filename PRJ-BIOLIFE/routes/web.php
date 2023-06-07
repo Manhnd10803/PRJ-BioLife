@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AccountController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.app');
-// });
+
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/dang-nhap', function(){
-    return view('account.login');
-});
+
+// Account
+Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
+Route::get('/register', [AccountController::class, 'getFormRegister'])->name('register');
+Route::get('/forgot-password', [AccountController::class, 'getFormForgotPassword']);
