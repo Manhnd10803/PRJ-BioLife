@@ -270,7 +270,7 @@
                                                 <ul class="posts">
                                                     <li>
                                                         <div class="block-post-item">
-                                                            <div class="thumb"><a href="#"><img src="{{ asset('storage/images/thumb-05.jpg') }}" width="100" height="73" alt=""></a></div>
+                                                            <div class="thumb"><a href="#"><img src="{{ asset('storage/images/megamenu/thumb-05.jpg') }}" width="100" height="73" alt=""></a></div>
                                                             <div class="left-info">
                                                                 <h4 class="post-name"><a href="#">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                                                 <span class="p-date">Jan 05, 2019</span>
@@ -280,7 +280,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="block-post-item">
-                                                            <div class="thumb"><a href="#"><img src="{{ asset('storage/images/thumb-06.jpg') }}" width="100" height="73" alt=""></a></div>
+                                                            <div class="thumb"><a href="#"><img src="{{ asset('storage/images/megamenu/thumb-06.jpg') }}" width="100" height="73" alt=""></a></div>
                                                             <div class="left-info">
                                                                 <h4 class="post-name"><a href="#">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                                                 <span class="p-date">May 15, 2019</span>
@@ -290,7 +290,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="block-post-item">
-                                                            <div class="thumb"><a href="#"><img src="{{ asset('storage/images/thumb-07.jpg') }}" width="100" height="73" alt=""></a></div>
+                                                            <div class="thumb"><a href="#"><img src="{{ asset('storage/images/megamenu/thumb-07.jpg') }}" width="100" height="73" alt=""></a></div>
                                                             <div class="left-info">
                                                                 <h4 class="post-name"><a href="#">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                                                 <span class="p-date">Apr 26, 2019</span>
