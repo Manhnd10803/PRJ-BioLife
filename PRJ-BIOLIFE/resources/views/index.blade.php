@@ -11,7 +11,7 @@
                             <div class="media">
                                 <div class="child-elememt">
                                     <a href="#" class="link-to">
-                                        <img src="assets/images/home-03/slide-01-child-01.png" width="604" height="580" alt="">
+                                        <img src="{{ asset('storage/images/home-03/slide-01-child-01.png') }}" width="604" height="580" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -29,7 +29,7 @@
                     <li>
                         <div class="slide-contain slider-opt03__layout01">
                             <div class="media">
-                                <div class="child-elememt"><a href="#" class="link-to"><img src="assets/images/home-03/slide-01-child-01.png" width="604" height="580" alt=""></a></div>
+                                <div class="child-elememt"><a href="#" class="link-to"><img src="{{ asset('storage/images/home-03/slide-01-child-01.png') }}" width="604" height="580" alt=""></a></div>
                             </div>
                             <div class="text-content">
                                 <i class="first-line">Pomegranate</i>
@@ -54,7 +54,7 @@
                                 <div class="banner-contain">
                                     <div class="media">
                                         <a href="#" class="bn-link">
-                                            <figure><img src="assets/images/home-03/bn_special_org.jpg" width="616" height="483" alt=""></figure>
+                                            <figure><img src="{{ asset('storage/images/home-03/bn_special_org.jpg') }}" width="616" height="483" alt=""></figure>
                                         </a>
                                     </div>
                                     <div class="text-content">
@@ -80,7 +80,7 @@
                                 <div class="banner-contain">
                                     <div class="media">
                                         <a href="#" class="bn-link">
-                                            <figure><img src="assets/images/home-03/bn_special_org.jpg" width="616" height="483" alt=""></figure>
+                                            <figure><img src="{{ asset('storage/images/home-03/bn_special_org.jpg') }}" width="616" height="483" alt=""></figure>
                                         </a>
                                     </div>
                                     <div class="text-content">
@@ -106,7 +106,7 @@
                                 <div class="banner-contain">
                                     <div class="media">
                                         <a href="#" class="bn-link">
-                                            <figure><img src="assets/images/home-03/bn_special_org.jpg" width="616" height="483" alt=""></figure>
+                                            <figure><img src="{{ asset('storage/images/home-03/bn_special_org.jpg') }}" width="616" height="483" alt=""></figure>
                                         </a>
                                     </div>
                                     <div class="text-content">
@@ -132,7 +132,7 @@
                                 <div class="banner-contain">
                                     <div class="media">
                                         <a href="#" class="bn-link">
-                                            <figure><img src="assets/images/home-03/bn_special_org.jpg" width="616" height="483" alt=""></figure>
+                                            <figure><img src="{{ asset('storage/images/home-03/bn_special_org.jpg') }}" width="616" height="483" alt=""></figure>
                                         </a>
                                     </div>
                                     <div class="text-content">
@@ -218,7 +218,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -244,7 +244,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-07.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-07.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -270,7 +270,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-02.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-02.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -296,7 +296,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-03.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-03.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -322,7 +322,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-06.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-06.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -348,7 +348,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -374,7 +374,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-19.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-19.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -400,7 +400,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -426,7 +426,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-22.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-22.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -452,7 +452,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-18.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-18.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -483,7 +483,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -509,7 +509,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-07.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-07.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -535,7 +535,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-02.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-02.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -561,7 +561,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -587,7 +587,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-19.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-19.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -613,7 +613,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-03.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-03.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -639,7 +639,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-18.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-18.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -665,7 +665,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-06.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-06.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -691,7 +691,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -717,7 +717,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-22.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-22.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -749,7 +749,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -775,7 +775,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-02.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-02.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -801,7 +801,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -827,7 +827,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-06.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-06.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -853,7 +853,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-07.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-07.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -879,7 +879,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-18.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-18.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -905,7 +905,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -931,7 +931,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-22.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-22.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -957,7 +957,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-19.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-19.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -983,7 +983,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-03.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-03.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1015,7 +1015,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1041,7 +1041,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1067,7 +1067,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-22.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-22.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1093,7 +1093,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-07.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-07.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1119,7 +1119,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-02.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-02.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1145,7 +1145,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1171,7 +1171,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-03.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-03.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1197,7 +1197,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-18.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-18.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1223,7 +1223,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-19.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-19.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1249,7 +1249,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-06.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-06.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1280,7 +1280,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1306,7 +1306,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-22.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-22.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1332,7 +1332,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1358,7 +1358,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-02.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-02.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1384,7 +1384,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-07.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-07.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1410,7 +1410,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-03.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-03.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1436,7 +1436,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1462,7 +1462,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-19.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-19.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1488,7 +1488,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-06.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-06.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1514,7 +1514,7 @@
                                         <div class="contain-product layout-default">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-18.jpg" alt="Vegetables" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-18.jpg') }}" alt="Vegetables" width="270" height="270" class="product-thumnail">
                                                 </a>
                                                 <a class="lookup btn_call_quickview" href="#"><i class="biolife-icon icon-search"></i></a>
                                             </div>
@@ -1549,16 +1549,16 @@
                     <div class="banner-contain">
                         <div class="media background-biolife-banner__promotion">
                             <div class="img-moving position-1">
-                                <img src="assets/images/home-03/img-moving-pst-1.png" width="149" height="139" alt="img msv">
+                                <img src="{{ asset('storage/images/home-03/img-moving-pst-1.png') }}" width="149" height="139" alt="img msv">
                             </div>
                             <div class="img-moving position-2">
-                                <img src="assets/images/home-03/img-moving-pst-2.png" width="185" height="265" alt="img msv">
+                                <img src="{{ asset('storage/images/home-03/img-moving-pst-2.png') }}" width="185" height="265" alt="img msv">
                             </div>
                             <div class="img-moving position-3">
-                                <img src="assets/images/home-03/img-moving-pst-3-cut.png" width="384" height="151" alt="img msv">
+                                <img src="{{ asset('storage/images/home-03/img-moving-pst-3-cut.png') }}" width="384" height="151" alt="img msv">
                             </div>
                             <div class="img-moving position-4">
-                                <img src="assets/images/home-03/img-moving-pst-4.png" width="198" height="269" alt="img msv">
+                                <img src="{{ asset('storage/images/home-03/img-moving-pst-4.png') }}" width="198" height="269" alt="img msv">
                             </div>
                         </div>
                         <div class="text-content">
@@ -1610,7 +1610,7 @@
                                         <div class="contain-product deal-layout contain-product__deal-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/home-03/product_deal_330x330.jpg" alt="dd" width="330" height="330" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/home-03/product_deal_330x330.jpg') }}" alt="dd" width="330" height="330" class="product-thumnail">
                                                 </a>
                                                 <div class="labels">
                                                     <span class="sale-label">-50%</span>
@@ -1639,7 +1639,7 @@
                                         <div class="contain-product deal-layout contain-product__deal-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/home-03/product_deal-02_330x330.jpg" alt="dd" width="330" height="330" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/home-03/product_deal-02_330x330.jpg') }}" alt="dd" width="330" height="330" class="product-thumnail">
                                                 </a>
                                                 <div class="labels">
                                                     <span class="sale-label">-50%</span>
@@ -1668,7 +1668,7 @@
                                         <div class="contain-product deal-layout contain-product__deal-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/home-03/product_deal-03_330x330.jpg" alt="dd" width="330" height="330" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/home-03/product_deal-03_330x330.jpg') }}" alt="dd" width="330" height="330" class="product-thumnail">
                                                 </a>
                                                 <div class="labels">
                                                     <span class="sale-label">-50%</span>
@@ -1706,7 +1706,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-19.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-19.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1727,7 +1727,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-03.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-03.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1748,7 +1748,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-02.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-02.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1769,7 +1769,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-22.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-22.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1790,7 +1790,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1811,7 +1811,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-05.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-05.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1832,7 +1832,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-06.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-06.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1853,7 +1853,7 @@
                                         <div class="contain-product right-info-layout contain-product__right-info-layout">
                                             <div class="product-thumb">
                                                 <a href="#" class="link-to-product">
-                                                    <img src="assets/images/products/p-20.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <img src="{{ asset('storage/images/products/p-20.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
                                                 </a>
                                             </div>
                                             <div class="info">
@@ -1895,56 +1895,56 @@
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-01.jpg" width="214" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-01.jpg') }}" width="214" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-02.jpg" width="214" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-02.jpg') }}" width="214" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-03.jpg" width="153" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-03.jpg') }}" width="153" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-04.jpg" width="224" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-04.jpg') }}" width="224" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-01.jpg" width="214" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-01.jpg') }}" width="214" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-02.jpg" width="214" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-02.jpg') }}" width="214" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-03.jpg" width="153" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-03.jpg') }}" width="153" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
                         <li>
                             <div class="biolife-brd-container">
                                 <a href="#" class="link">
-                                    <figure><img src="assets/images/home-03/brd-04.jpg" width="224" height="163" alt=""></figure>
+                                    <figure><img src="{{ asset('storage/images/home-03/brd-04.jpg') }}" width="224" height="163" alt=""></figure>
                                 </a>
                             </div>
                         </li>
@@ -1963,7 +1963,7 @@
                         <li>
                             <div class="post-item effect-01 style-bottom-info layout-02 ">
                                 <div class="thumbnail">
-                                    <a href="#" class="link-to-post"><img src="assets/images/our-blog/post-thumb-01.jpg" width="370" height="270" alt=""></a>
+                                    <a href="#" class="link-to-post"><img src="{{ asset('storage/images/our-blog/post-thumb-01.jpg') }}" width="370" height="270" alt=""></a>
                                     <div class="post-date">
                                         <span class="date">26</span>
                                         <span class="month">dec</span>
@@ -1972,7 +1972,7 @@
                                 <div class="post-content">
                                     <h4 class="post-name"><a href="#" class="linktopost">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                     <div class="post-meta">
-                                        <a href="#" class="post-meta__item author"><img src="assets/images/home-03/post-author.png" width="28" height="28" alt=""><span>Admin</span></a>
+                                        <a href="#" class="post-meta__item author"><img src="{{ asset('storage/images/home-03/post-author.png') }}" width="28" height="28" alt=""><span>Admin</span></a>
                                         <a href="#" class="post-meta__item btn liked-count">2<span class="biolife-icon icon-comment"></span></a>
                                         <a href="#" class="post-meta__item btn comment-count">6<span class="biolife-icon icon-like"></span></a>
                                         <div class="post-meta__item post-meta__item-social-box">
@@ -1998,7 +1998,7 @@
                         <li>
                             <div class="post-item effect-01 style-bottom-info layout-02">
                                 <div class="thumbnail">
-                                    <a href="#" class="link-to-post"><img src="assets/images/our-blog/post-thumb-02.jpg" width="370" height="270" alt=""></a>
+                                    <a href="#" class="link-to-post"><img src="{{ asset('storage/images/our-blog/post-thumb-02.jpg') }}" width="370" height="270" alt=""></a>
                                     <div class="post-date">
                                         <span class="date">26</span>
                                         <span class="month">dec</span>
@@ -2007,7 +2007,7 @@
                                 <div class="post-content">
                                     <h4 class="post-name"><a href="#" class="linktopost">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                     <div class="post-meta">
-                                        <a href="#" class="post-meta__item author"><img src="assets/images/home-03/post-author.png" width="28" height="28" alt=""><span>Admin</span></a>
+                                        <a href="#" class="post-meta__item author"><img src="{{ asset('storage/images/home-03/post-author.png') }}" width="28" height="28" alt=""><span>Admin</span></a>
                                         <a href="#" class="post-meta__item btn liked-count">2<span class="biolife-icon icon-comment"></span></a>
                                         <a href="#" class="post-meta__item btn comment-count">6<span class="biolife-icon icon-like"></span></a>
                                         <div class="post-meta__item post-meta__item-social-box">
@@ -2033,7 +2033,7 @@
                         <li>
                             <div class="post-item effect-01 style-bottom-info layout-02">
                                 <div class="thumbnail">
-                                    <a href="#" class="link-to-post"><img src="assets/images/our-blog/post-thumb-04.jpg" width="370" height="270" alt=""></a>
+                                    <a href="#" class="link-to-post"><img src="{{ asset('storage/images/our-blog/post-thumb-04.jpg') }}" width="370" height="270" alt=""></a>
                                     <div class="post-date">
                                         <span class="date">26</span>
                                         <span class="month">dec</span>
@@ -2042,7 +2042,7 @@
                                 <div class="post-content">
                                     <h4 class="post-name"><a href="#" class="linktopost">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                     <div class="post-meta">
-                                        <a href="#" class="post-meta__item author"><img src="assets/images/home-03/post-author.png" width="28" height="28" alt=""><span>Admin</span></a>
+                                        <a href="#" class="post-meta__item author"><img src="{{ asset('storage/images/home-03/post-author.png') }}" width="28" height="28" alt=""><span>Admin</span></a>
                                         <a href="#" class="post-meta__item btn liked-count">2<span class="biolife-icon icon-comment"></span></a>
                                         <a href="#" class="post-meta__item btn comment-count">6<span class="biolife-icon icon-like"></span></a>
                                         <div class="post-meta__item post-meta__item-social-box">
@@ -2068,7 +2068,7 @@
                         <li>
                             <div class="post-item effect-01 style-bottom-info layout-02">
                                 <div class="thumbnail">
-                                    <a href="#" class="link-to-post"><img src="assets/images/our-blog/post-thumb-03.jpg" width="370" height="270" alt=""></a>
+                                    <a href="#" class="link-to-post"><img src="{{ asset('storage/images/our-blog/post-thumb-03.jpg') }}" width="370" height="270" alt=""></a>
                                     <div class="post-date">
                                         <span class="date">26</span>
                                         <span class="month">dec</span>
@@ -2077,7 +2077,7 @@
                                 <div class="post-content">
                                     <h4 class="post-name"><a href="#" class="linktopost">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                     <div class="post-meta">
-                                        <a href="#" class="post-meta__item author"><img src="assets/images/home-03/post-author.png" width="28" height="28" alt=""><span>Admin</span></a>
+                                        <a href="#" class="post-meta__item author"><img src="{{ asset('storage/images/home-03/post-author.png') }}" width="28" height="28" alt=""><span>Admin</span></a>
                                         <a href="#" class="post-meta__item btn liked-count">2<span class="biolife-icon icon-comment"></span></a>
                                         <a href="#" class="post-meta__item btn comment-count">6<span class="biolife-icon icon-like"></span></a>
                                         <div class="post-meta__item post-meta__item-social-box">
@@ -2103,7 +2103,7 @@
                         <li>
                             <div class="post-item effect-01 style-bottom-info layout-02">
                                 <div class="thumbnail">
-                                    <a href="#" class="link-to-post"><img src="assets/images/our-blog/post-thumb-05.jpg" width="370" height="270" alt=""></a>
+                                    <a href="#" class="link-to-post"><img src="{{ asset('storage/images/our-blog/post-thumb-05.jpg') }}" width="370" height="270" alt=""></a>
                                     <div class="post-date">
                                         <span class="date">26</span>
                                         <span class="month">dec</span>
@@ -2112,7 +2112,7 @@
                                 <div class="post-content">
                                     <h4 class="post-name"><a href="#" class="linktopost">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                     <div class="post-meta">
-                                        <a href="#" class="post-meta__item author"><img src="assets/images/home-03/post-author.png" width="28" height="28" alt=""><span>Admin</span></a>
+                                        <a href="#" class="post-meta__item author"><img src="{{ asset('storage/images/home-03/post-author.png') }}" width="28" height="28" alt=""><span>Admin</span></a>
                                         <a href="#" class="post-meta__item btn liked-count">2<span class="biolife-icon icon-comment"></span></a>
                                         <a href="#" class="post-meta__item btn comment-count">6<span class="biolife-icon icon-like"></span></a>
                                         <div class="post-meta__item post-meta__item-social-box">
@@ -2138,7 +2138,7 @@
                         <li>
                             <div class="post-item effect-01 style-bottom-info layout-02">
                                 <div class="thumbnail">
-                                    <a href="#" class="link-to-post"><img src="assets/images/our-blog/post-thumb-06.jpg" width="370" height="270" alt=""></a>
+                                    <a href="#" class="link-to-post"><img src="{{ asset('storage/images/our-blog/post-thumb-06.jpg') }}" width="370" height="270" alt=""></a>
                                     <div class="post-date">
                                         <span class="date">26</span>
                                         <span class="month">dec</span>
@@ -2147,7 +2147,7 @@
                                 <div class="post-content">
                                     <h4 class="post-name"><a href="#" class="linktopost">Ashwagandha: The #1 Herb in the World for Anxiety?</a></h4>
                                     <div class="post-meta">
-                                        <a href="#" class="post-meta__item author"><img src="assets/images/home-03/post-author.png" width="28" height="28" alt=""><span>Admin</span></a>
+                                        <a href="#" class="post-meta__item author"><img src="{{ asset('storage/images/home-03/post-author.png') }}" width="28" height="28" alt=""><span>Admin</span></a>
                                         <a href="#" class="post-meta__item btn liked-count">2<span class="biolife-icon icon-comment"></span></a>
                                         <a href="#" class="post-meta__item btn comment-count">6<span class="biolife-icon icon-like"></span></a>
                                         <div class="post-meta__item post-meta__item-social-box">
