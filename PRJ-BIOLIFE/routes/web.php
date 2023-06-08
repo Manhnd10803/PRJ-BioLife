@@ -17,6 +17,10 @@ use App\Http\Controllers\AccountController;
 Route::get('/', function () {
     return view('index');
 });
+// Product
+Route::get('/product-detail', function () {
+    return view('products.product_detail');
+});
 
 // Account
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
