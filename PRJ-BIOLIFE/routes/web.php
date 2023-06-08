@@ -26,3 +26,6 @@ Route::get('/forgot-password', [AccountController::class, 'getFormForgotPassword
 Route::get('/cart', function(){
     return view('cart.cart');
 });
+Route::get('/bill-success', function(){
+    return view('cart.billSuccess');
+});
