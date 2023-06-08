@@ -22,3 +22,10 @@ Route::get('/', function () {
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
 Route::get('/register', [AccountController::class, 'getFormRegister'])->name('register');
 Route::get('/forgot-password', [AccountController::class, 'getFormForgotPassword']);
+// Cart
+Route::get('/cart', function(){
+    return view('cart.cart');
+});
+Route::get('/bill-success', function(){
+    return view('cart.billSuccess');
+});
