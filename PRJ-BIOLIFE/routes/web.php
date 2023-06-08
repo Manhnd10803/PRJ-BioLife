@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 // Product
 Route::get('/product-detail', function () {
-    return view('products.product_detail');
+    return view('products.productDetail');
 });
 
 // Account
@@ -29,7 +29,10 @@ Route::get('/forgot-password', [AccountController::class, 'getFormForgotPassword
 // Cart
 Route::get('/cart', function(){
     return view('cart.cart');
-});
+})->name('cart');
 Route::get('/bill-success', function(){
     return view('cart.billSuccess');
 });
+Route::get('/check-out', function(){
+    return view('cart.checkOut');
+})->name('check-out');

@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="top-bar left">
                     <ul class="horizontal-menu">
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>Organic@company.com</a></li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>biolife108@bio.vn</a></li>
                         <li><a href="#">Free Shipping for all Order of $99</a></li>
                     </ul>
                 </div>
@@ -75,14 +75,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-2 col-md-6 col-xs-6">
-                        <a href="index-2.html" class="biolife-logo"><img src="{{ asset('storage/images/organic-3.png') }}" alt="biolife logo" width="135" height="34"></a>
+                        <a href="/" class="biolife-logo"><img src="{{ asset('storage/images/organic-3.png') }}" alt="biolife logo" width="135" height="34"></a>
                     </div>
                     <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
                         <div class="primary-menu">
                         <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
                             <li class="menu-item"><a href="index-2.html">Home</a></li>
                             <li class="menu-item menu-item-has-children has-megamenu">
-                                <a href="#" class="menu-name" data-title="Shop" >Shop</a>
+                                <a href="#" class="menu-name" data-title="Shop">Shop</a>
                                 <div class="wrap-megamenu lg-width-900 md-width-750">
                                     <div class="mega-content">
                                         <div class="col-lg-3 col-md-3 col-xs-12 md-margin-bottom-0 xs-margin-bottom-25">
@@ -467,8 +467,8 @@
                                                 </li>
                                             </ul>
                                             <p class="btn-control">
-                                                <a href="#" class="btn view-cart">view cart</a>
-                                                <a href="#" class="btn">checkout</a>
+                                                <a href="{{ route('cart') }}" class="btn view-cart">view cart</a>
+                                                <a href="{{ route('check-out') }}" class="btn">checkout</a>
                                             </p>
                                         </div>
                                     </div>
