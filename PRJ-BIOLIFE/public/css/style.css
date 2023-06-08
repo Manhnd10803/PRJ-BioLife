@@ -5048,7 +5048,7 @@ body.open-overlay #overlay{
     color: #ffbc53;
 }
 .background-top-banner-for-shopping{
-    background: url(../images/top_banner_shopping_cart.png);
+    background: url(../storage/images/top_banner_shopping_cart.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
