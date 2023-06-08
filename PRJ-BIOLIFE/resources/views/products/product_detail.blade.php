@@ -1,7 +1,7 @@
 @extends('layouts.app')
-{{-- Product Detail --}}
+
 @section('content')
-    
+    {{-- Product Detail --}}
     <div class="page-contain single-product">
         <div class="container">
 
