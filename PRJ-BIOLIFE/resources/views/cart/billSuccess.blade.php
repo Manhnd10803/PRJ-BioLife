@@ -18,7 +18,7 @@
 
                 <!--Top banner-->
                 <div class="top-banner background-top-banner-for-shopping min-height-346px">
-                    <h1 style="font-weight: bold;" >You have successfully placed your order</h1>
+                    <h1 style="font-weight: 800;" >You have successfully placed your order</h1>
                     <h3 style="font-weight: 700;">Please wait about 1-2 days</h3>
                 </div>
             </div>
