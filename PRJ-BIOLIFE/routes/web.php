@@ -36,3 +36,7 @@ Route::get('/bill-success', function(){
 Route::get('/check-out', function(){
     return view('cart.checkOut');
 })->name('check-out');
+//Admin
+Route::get('/admin', function(){
+    return view('admin.account.list');
+});
