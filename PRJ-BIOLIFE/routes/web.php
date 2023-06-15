@@ -40,3 +40,12 @@ Route::get('/check-out', function(){
 Route::get('/admin', function(){
     return view('admin.account.list');
 });
+Route::get('/adminCategory', function(){
+    return view('admin.category.list');
+});
+Route::get('/formAddCategory', function(){
+    return view('admin.category.add');
+});
+Route::get('/formEditCategory', function(){
+    return view('admin.category.update');
+});
