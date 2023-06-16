@@ -49,3 +49,6 @@ Route::get('/formAddCategory', function(){
 Route::get('/formEditCategory', function(){
     return view('admin.category.update');
 });
+Route::get('/adminOrder', function(){
+    return view('admin.orders.list');
+});
