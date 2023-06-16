@@ -1,13 +1,17 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container-fluid px-4">
-    <div class="card mb-4 mt-4">
+    <h1 class="mt-4">LIST ORDER</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Quản trị đơn hàng.</li>
+    </ol>
+    {{-- <div class="row">
+        
+    </div> --}}
+    <div class="card mb-4">
         <div class="card-header">
-            <div>
-                <i class="fas fa-table me-1"></i>
-                DataTable Category
-            </div>
-            <button type="button" class="btn btn-primary">Add</button>
+            <i class="fas fa-table me-1"></i>
+            DataTable Order
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -34,20 +38,13 @@
                         <td>Chief Marketing Officer (CMO)</td>
                         <td>New York</td>
                         <td>
-
-                            <form action="" method="post">
-                                @method('DELETE')
-                                @csrf
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <a href="" class="btn btn-success">Update</a>
-                            </form>
-
-                            {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="material-icons text-sm me-2">delete</i>Delete</a>
-                            <a class="btn btn-link text-dark px-3 mb-0" href="/formEditCategory"><i class="material-icons text-sm me-2">edit</i>Edit</a> --}}
+                            <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="material-icons text-sm me-2">delete</i>Delete</a>
+                            <a class="btn btn-link text-dark px-3 mb-0" href="/formEditCategoryjavascript:;"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                             
-
                         </td>
                     </tr>
+                    
+                    
                 </tbody>
             </table>
         </div>

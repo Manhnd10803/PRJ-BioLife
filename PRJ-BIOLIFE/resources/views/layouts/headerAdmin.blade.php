@@ -9,6 +9,14 @@
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="{{ asset('css/styleAdmin.css') }}" rel="stylesheet" />
+
+        <link href="{{ asset('css/formAddCate.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/orderAdmin.css') }}" rel="stylesheet" />
+        <!-- Nucleo Icons -->
+        <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
     </head>
@@ -53,7 +61,6 @@
                                 <div class="sb-nav-link-icon"><i class="fa-sharp fa-light fa-users"></i></div>
                                 Account 
                             </a>
-                            
                             <div class="sb-sidenav-menu-heading">Category Manager</div>
                             <a class="nav-link" href="{{ route('admin.category.list') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -63,6 +70,29 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Add Category
                             </a>
+
+                            {{-- Order --}}
+
+                            <div class="sb-sidenav-menu-heading">Order Manager</div>
+                                <a class="nav-link" href="/adminOrder">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    List Order
+                                </a>
+                                {{-- <a class="nav-link" href="/formAddCategory">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Add Category
+                                </a> --}}
+
+                                <div class="sb-sidenav-menu-heading">Addons</div>
+                                <a class="nav-link" href="charts.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                    Charts
+                                </a>
+                                <a class="nav-link" href="tables.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Tables
+                                </a>
+                            </div>
                     </div>
                 </nav>
             </div>
