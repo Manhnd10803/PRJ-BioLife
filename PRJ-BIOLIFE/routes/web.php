@@ -39,7 +39,6 @@ Route::get('/check-out', function(){
 
 
 //Admin
-
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard', function(){ return view('admin.dashboard'); })->name('admin.dashboard');
     //Account Administration
@@ -66,7 +65,7 @@ Route::get('/formAddCategory', function(){
     return view('admin.category.add');
 });
 Route::get('/formEditCategory', function(){
-    return view('admin.category.update');
+    return view('admin.category.edit');
 });
 Route::get('/adminOrder', function(){
     return view('admin.orders.list');

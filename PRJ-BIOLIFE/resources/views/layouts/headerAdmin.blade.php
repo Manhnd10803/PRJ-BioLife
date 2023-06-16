@@ -9,8 +9,6 @@
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="{{ asset('css/styleAdmin.css') }}" rel="stylesheet" />
-
-        <link href="{{ asset('css/formAddCate.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/orderAdmin.css') }}" rel="stylesheet" />
         <!-- Nucleo Icons -->
         <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
@@ -70,9 +68,6 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Add Category
                             </a>
-
-                            {{-- Order --}}
-
                             <div class="sb-sidenav-menu-heading">Order Manager</div>
                                 <a class="nav-link" href="/adminOrder">
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -82,16 +77,6 @@
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                     Add Category
                                 </a> --}}
-
-                                <div class="sb-sidenav-menu-heading">Addons</div>
-                                <a class="nav-link" href="charts.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                    Charts
-                                </a>
-                                <a class="nav-link" href="tables.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    Tables
-                                </a>
                             </div>
                     </div>
                 </nav>

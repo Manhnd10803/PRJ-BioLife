@@ -7,7 +7,7 @@
                 <i class="fas fa-table me-1"></i>
                 DataTable Account
             </div>
-            <a href="{{ route('admin.account.add') }}" class="btn btn-primary">Add</a>
+            <a href="{{ route('admin.account.add') }}" class="btn btn-link text-success px-3 mb-0"><i class="material-icons text-sm me-2">add</i>Add</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -36,8 +36,8 @@
                             <form action="" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <a href="{{ route('admin.account.edit') }}" class="btn btn-success">Update</a>
+                                <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                                <a class="btn btn-link text-dark px-3 mb-0" href="{{ route('admin.account.edit') }}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                             </form>
                         </td>
                     </tr>
