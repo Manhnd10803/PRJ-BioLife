@@ -15,4 +15,15 @@ class AccountController extends Controller
     public function getFormForgotPassword(){
         return view('account.forgotPassword');
     }
+
+    //Admin
+    public function getFormList(){
+        return view('admin.account.list');
+    }
+    public function getFormAdd(){
+        return view('admin.account.add');
+    }
+    public function getFormEdit(){
+        return view('admin.account.edit');
+    }
 }

@@ -36,16 +36,21 @@ Route::get('/bill-success', function(){
 Route::get('/check-out', function(){
     return view('cart.checkOut');
 })->name('check-out');
+
+
 //Admin
-Route::get('/admin', function(){
-    return view('admin.account.list');
-});
-Route::get('/adminCategory', function(){
-    return view('admin.category.list');
-});
-Route::get('/formAddCategory', function(){
-    return view('admin.category.add');
-});
-Route::get('/formEditCategory', function(){
-    return view('admin.category.update');
+Route::prefix('admin')->group(function(){
+    Route::get('/dashboard', function(){ return view('admin.dashboard'); })->name('admin.dashboard');
+    //Account Administration
+    Route::prefix('account')->group(function(){
+        Route::get('/list', [AccountController::class, 'getFormList'])->name('admin.account.list');
+        Route::get('/add', [AccountController::class, 'getFormAdd'])->name('admin.account.add');
+        Route::get('/edit', [AccountController::class, 'getFormEdit'])->name('admin.account.edit');
+    });
+    //Category Administration
+    Route::prefix('category')->group(function(){
+        Route::get('/list', function(){ return view('admin.category.list'); })->name('admin.category.list');
+        Route::get('/add', function(){ return view('admin.category.add'); })->name('admin.category.add');
+        Route::get('/edit', function(){ return view('admin.category.update'); })->name('admin.category.edit');
+    });
 });
