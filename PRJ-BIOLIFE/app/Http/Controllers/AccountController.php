@@ -17,7 +17,7 @@ class AccountController extends Controller
     }
 
     //Admin
-    public function getFormList(){
+    public function index(){
         return view('admin.account.list');
     }
     public function getFormAdd(){

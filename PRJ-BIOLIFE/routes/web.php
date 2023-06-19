@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,7 +44,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashboard', function(){ return view('admin.dashboard'); })->name('admin.dashboard');
     //Account Administration
     Route::prefix('account')->group(function(){
-        Route::get('/list', [AccountController::class, 'getFormList'])->name('admin.account.list');
+        Route::get('/list', [AccountController::class, 'index'])->name('admin.account.list');
         Route::get('/add', [AccountController::class, 'getFormAdd'])->name('admin.account.add');
         Route::get('/edit', [AccountController::class, 'getFormEdit'])->name('admin.account.edit');
     });
@@ -52,6 +53,14 @@ Route::prefix('admin')->group(function(){
         Route::get('/list', function(){ return view('admin.category.list'); })->name('admin.category.list');
         Route::get('/add', function(){ return view('admin.category.add'); })->name('admin.category.add');
         Route::get('/edit', function(){ return view('admin.category.update'); })->name('admin.category.edit');
+    });
+    //Product Administration
+    Route::prefix('product')->group(function(){
+        Route::get('/list', [ProductController::class, 'index'])->name('admin.product.list');
+        Route::get('/add', [ProductController::class, 'getFormAdd'])->name('admin.product.add');
+        Route::post('/add', [ProductController::class, 'submitFormAdd'])->name('admin.product.store');
+        Route::get('/edit', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
+        Route::post('/edit', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
     });
 });
 

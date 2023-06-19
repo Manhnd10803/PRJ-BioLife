@@ -16,6 +16,8 @@
         <!-- Material Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        {{-- CKEditor --}}
+        <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
     </head>
     <body class="sb-nav-fixed">
@@ -67,6 +69,11 @@
                             <a class="nav-link" href="{{ route('admin.category.add') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Add Category
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Product</div>
+                            <a class="nav-link" href="{{ route('admin.product.list') }}">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-utensils"></i></div>
+                                Product
                             </a>
                             <div class="sb-sidenav-menu-heading">Order Manager</div>
                                 <a class="nav-link" href="/adminOrder">
