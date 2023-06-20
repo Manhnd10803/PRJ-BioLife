@@ -1,18 +1,12 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">ADD CATEGORY</h1>
-    <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-      <li class="breadcrumb-item active">Add Category</li>
-  </ol>
-    <div class="alert alert-primary mb-0 alert-dismissible alert-absolute fade show " id="alertExample" role="alert" data-mdb-color="secondary">
-        <i class="fas fa-check me-2"></i>
-        Thông báo thêm thành công hoặc thất bại
-    </div>
+    
     <div class="row">
         
-        <form class="form-add-cate">
+        <form class="form-add-cate" method="post" class="form-control" >
+            @method('POST')
+            @csrf
             <!-- ID input -->
             <div class="form-outline mb-4">
 

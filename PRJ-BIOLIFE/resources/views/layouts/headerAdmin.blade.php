@@ -64,11 +64,7 @@
                             <div class="sb-sidenav-menu-heading">Category Manager</div>
                             <a class="nav-link" href="{{ route('admin.category.list') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                List Category
-                            </a>
-                            <a class="nav-link" href="{{ route('admin.category.add') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Add Category
+                                Category
                             </a>
                             <div class="sb-sidenav-menu-heading">Product</div>
                             <a class="nav-link" href="{{ route('admin.product.list') }}">
@@ -78,12 +74,8 @@
                             <div class="sb-sidenav-menu-heading">Order Manager</div>
                                 <a class="nav-link" href="/adminOrder">
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    List Order
+                                    Order
                                 </a>
-                                {{-- <a class="nav-link" href="/formAddCategory">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    Add Category
-                                </a> --}}
                             </div>
                     </div>
                 </nav>

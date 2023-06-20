@@ -7,7 +7,8 @@
                 <i class="fas fa-table me-1"></i>
                 DataTable Category
             </div>
-            <button type="button" class="btn btn-primary">Add</button>
+            {{-- <button type="button" class="btn btn-primary">Add</button> --}}
+            <a href="{{ route('admin.category.add') }}" class="btn btn-link text-success px-3 mb-0"><i class="material-icons text-sm me-2">add</i>Add</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -38,8 +39,9 @@
                             <form action="" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <a href="" class="btn btn-success">Update</a>
+                                <button type="button" style="border: none;background-color: white;"><a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="material-icons text-sm me-2">delete</i>Delete</a></button>
+                        
+                                <a class="btn btn-link text-dark px-3 mb-0" href="/formEditCategory"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                             </form>
 
                             {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="material-icons text-sm me-2">delete</i>Delete</a>

@@ -1,17 +1,14 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">LIST ORDER</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Quản trị đơn hàng.</li>
-    </ol>
-    {{-- <div class="row">
-        
-    </div> --}}
-    <div class="card mb-4">
+    
+    <div class="card mb-4 mt-4">
         <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            DataTable Order
+            <div>
+                <i class="fas fa-table me-1"></i>
+                DataTable Order
+            </div>
+            <a href="{{ route('admin.product.add') }}" class="btn btn-link text-success px-3 mb-0"><i class="material-icons text-sm me-2">add</i>Add</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
