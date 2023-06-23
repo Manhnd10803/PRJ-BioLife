@@ -1,7 +1,6 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container-fluid px-4">
-    
     <div class="card mb-4 mt-4">
         <div class="card-header">
             <div>
