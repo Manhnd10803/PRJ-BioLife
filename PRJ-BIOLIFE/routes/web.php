@@ -52,7 +52,15 @@ Route::prefix('admin')->group(function(){
     Route::prefix('category')->group(function(){
         Route::get('/list', function(){ return view('admin.category.list'); })->name('admin.category.list');
         Route::get('/add', function(){ return view('admin.category.add'); })->name('admin.category.add');
-        Route::get('/edit', function(){ return view('admin.category.update'); })->name('admin.category.edit');
+        Route::get('/edit', function(){ return view('admin.category.edit'); })->name('admin.category.edit');
+    });
+    //Bill Administration
+    Route::prefix('bill')->group(function(){
+        Route::get('/list', function(){ return view('admin.bill.list'); })->name('admin.bill.list');
+        Route::get('/detailBill', function (){ return view('admin.bill.detailBill');})->name('admin.bill.detailBill');
+        // Route::get('/add', function(){ return view('admin.bill.add'); })->name('admin.bill.add');
+        // Route::get('/edit', function(){ return view('admin.bill.update'); })->name('admin.bill.edit');
+        
     });
     //Product Administration
     Route::prefix('product')->group(function(){
@@ -67,16 +75,16 @@ Route::prefix('admin')->group(function(){
 Route::get('/admin', function(){
     return view('admin.account.list');
 });
-Route::get('/adminCategory', function(){
-    return view('admin.category.list');
-});
-Route::get('/formAddCategory', function(){
-    return view('admin.category.add');
-});
-Route::get('/formEditCategory', function(){
-    return view('admin.category.edit');
-});
-Route::get('/adminOrder', function(){
-    return view('admin.orders.list');
-});
+// Route::get('/adminCategory', function(){
+//     return view('admin.category.list');
+// });
+// Route::get('/formAddCategory', function(){
+//     return view('admin.category.add');
+// });
+// Route::get('/formEditCategory', function(){
+//     return view('admin.category.edit');
+// });
+// Route::get('/adminOrder', function(){
+//     return view('admin.orders.list');
+// });
 

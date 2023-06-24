@@ -37,7 +37,7 @@
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="material-icons text-sm me-2">delete</i>Delete</button>
-                                <a class="btn btn-link text-dark px-3 mb-0" href="/formEditCategory"><i class="material-icons text-sm me-2">edit</i>Edit</a>
+                                <a class="btn btn-link text-dark px-3 mb-0" href="{{ route('admin.category.edit') }}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                             </form>
                         </td>
                     </tr>

@@ -71,10 +71,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-utensils"></i></div>
                                 Product
                             </a>
-                            <div class="sb-sidenav-menu-heading">Order Manager</div>
-                                <a class="nav-link" href="/adminOrder">
+                            <div class="sb-sidenav-menu-heading">Billing Manager</div>
+                                <a class="nav-link" href="{{ route('admin.bill.list') }}">
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    Order
+                                    Billing
                                 </a>
                             </div>
                     </div>
