@@ -75,16 +75,3 @@ Route::prefix('admin')->group(function(){
 Route::get('/admin', function(){
     return view('admin.account.list');
 });
-// Route::get('/adminCategory', function(){
-//     return view('admin.category.list');
-// });
-// Route::get('/formAddCategory', function(){
-//     return view('admin.category.add');
-// });
-// Route::get('/formEditCategory', function(){
-//     return view('admin.category.edit');
-// });
-// Route::get('/adminOrder', function(){
-//     return view('admin.orders.list');
-// });
-

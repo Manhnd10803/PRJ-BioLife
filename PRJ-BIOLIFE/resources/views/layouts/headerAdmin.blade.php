@@ -66,15 +66,15 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Category
                             </a>
-                            <div class="sb-sidenav-menu-heading">Product</div>
+                            <div class="sb-sidenav-menu-heading">Product Manager</div>
                             <a class="nav-link" href="{{ route('admin.product.list') }}">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-utensils"></i></div>
                                 Product
                             </a>
-                            <div class="sb-sidenav-menu-heading">Billing Manager</div>
+                            <div class="sb-sidenav-menu-heading">Bill Manager</div>
                                 <a class="nav-link" href="{{ route('admin.bill.list') }}">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    Billing
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                                    Bill
                                 </a>
                             </div>
                     </div>
