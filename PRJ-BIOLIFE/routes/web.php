@@ -25,8 +25,14 @@ Route::get('/product-detail', function () {
 
 // Account
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
+Route::post('/login', [AccountController::class, 'submitFormLogin'])->name('login');
 Route::get('/register', [AccountController::class, 'getFormRegister'])->name('register');
-Route::get('/forgot-password', [AccountController::class, 'getFormForgotPassword']);
+Route::post('/register', [AccountController::class, 'submitFormRegister'])->name('register');
+Route::post('/logout', [AccountController::class, 'logout'])->name('logout');
+Route::get('/forgot-password', [AccountController::class, 'getFormForgotPassword'])->name('forgot-password');
+Route::post('/forgot-password', [AccountController::class, 'submitFormForgotPassword'])->name('forgot-password');
+Route::get('/new-password/{id}/{token}', [AccountController::class, 'getFormNewPassword'])->name('new-password');
+Route::post('/new-password', [AccountController::class, 'submitFormNewPassword'])->name('submit-new-password');
 // Cart
 Route::get('/cart', function(){
     return view('cart.cart');
@@ -40,7 +46,7 @@ Route::get('/check-out', function(){
 
 
 //Admin
-Route::prefix('admin')->group(function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
     Route::get('/dashboard', function(){ return view('admin.dashboard'); })->name('admin.dashboard');
     //Account Administration
     Route::prefix('account')->group(function(){
@@ -70,8 +76,4 @@ Route::prefix('admin')->group(function(){
         Route::get('/edit', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
         Route::post('/edit', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
     });
-});
-
-Route::get('/admin', function(){
-    return view('admin.account.list');
 });

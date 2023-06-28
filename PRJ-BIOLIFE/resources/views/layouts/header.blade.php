@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-    
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}">
@@ -19,9 +17,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main-color.css') }}">
+    {{-- JS --}}
+    @yield('javascript')
 </head>
 <body class="biolife-body">
-
     <!-- Preloader -->
     <div id="biof-loading">
         <div class="biof-loading-center">
@@ -66,7 +65,11 @@
                                 <option value="jp">Japan (JPY)</option>
                             </select>
                         </li>
-                        <li><a href="{{ route('login') }}" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>
+                        @if (Auth::check())
+                        <li><a href="" class="login-link"><i class="biolife-icon icon-login"></i> {{ Auth::user()->name }} </a></li>
+                        @else
+                        <li><a href="{{ route('login') }}" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>  
+                        @endif
                     </ul>
                 </div>
             </div>

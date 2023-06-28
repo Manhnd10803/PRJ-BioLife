@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('idBill')->unsigned()->nullable();
             $table->foreign('idBill')->references('idBill')->on('bills');
             $table->integer('idUser')->unsigned()->nullable();
-            $table->foreign('idUser')->references('idUser')->on('users');
+            $table->foreign('idUser')->references('id')->on('users');
             $table->timestamps();
         });
     }
