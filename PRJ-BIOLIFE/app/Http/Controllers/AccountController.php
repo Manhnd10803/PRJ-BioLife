@@ -93,14 +93,79 @@ class AccountController extends Controller
         return view('account.login')->with('message_success', 'Change password successfully, please login');
     }
 
-    //Admin
+    // Admin 
     public function index(){
-        return view('admin.account.list');
+        // $users = User::paginate(10);
+        $users = User::all();
+        return view('admin.account.list', compact('users'));
     }
     public function getFormAdd(){
         return view('admin.account.add');
     }
-    public function getFormEdit(){
-        return view('admin.account.edit');
+    function submitAdd(Request $request) {
+        $request->validate([
+            'username' => "required",
+            'fullname' => "required",
+            'email' => "unique:users",
+            'address' => "required",
+            'phone_number' => "required",
+            'password' => "required",
+            'repeat_password' => "same:password",
+            'role' => "required",
+        ]);
+        $user = new User();
+        $user->name = $request->username;
+        $user->fullname = $request->fullname;
+        $user->email = $request->email;
+        $user->address = $request->address;
+        $user->phone = $request->phone_number;
+        $user->password = Hash::make($request->password);
+        $user->role = $request->role;;
+        $user->save();
+        
+        return redirect()->route('admin.account.list')->with('success','Created successfully');
+        
+    }
+    public function getFormEdit($id){
+        $user = User::find($id);
+        return view('admin.account.edit', compact('user'));
+    }
+    function submitEdit(Request $request , $id) {
+        $request->validate([
+            'username' => "required",
+            'fullname' => "required",
+            'email' => "unique:users",
+            'address' => "required",
+            'phone_number' => "required",
+            'role' => "required",
+        ]);
+        $user = User::find($id);
+        
+        $data = [
+            'name' => $request->username,
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'address' => $request->address,
+            'phone' => $request->phone_number,
+            'role' => $request->role,
+        ];
+
+        if ($request->password) {
+            $request->validate([
+                'password' => "required",
+                'repeat_password' => "same:password",
+            ]);
+            $data['password'] = bcrypt($request->password); // Tương tự Hash::make($request->password);
+        }
+
+        $user->update($data);
+
+        return redirect()->route('admin.account.edit', $user->id)->with('success','Update successfully');
+        
+    }
+    function deleteUser($id) {
+        // $user->delete();
+        User::find($id)->delete();
+        return redirect()->route('admin.account.list')->with('success','Delete successfully');
     }
 }
