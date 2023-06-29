@@ -106,10 +106,10 @@ class AccountController extends Controller
         $request->validate([
             'username' => "required",
             'fullname' => "required",
-            'email' => "unique:users",
+            'email' => "required|unique:users|email",
             'address' => "required",
             'phone_number' => "required",
-            'password' => "required",
+            'password' => "required|min:8|max:32",
             'repeat_password' => "same:password",
             'role' => "required",
         ]);
@@ -134,7 +134,7 @@ class AccountController extends Controller
         $request->validate([
             'username' => "required",
             'fullname' => "required",
-            'email' => "unique:users",
+            'email' => "required|unique:users|email",
             'address' => "required",
             'phone_number' => "required",
             'role' => "required",
@@ -152,7 +152,7 @@ class AccountController extends Controller
 
         if ($request->password) {
             $request->validate([
-                'password' => "required",
+                'password' => "required|min:8|max:32",
                 'repeat_password' => "same:password",
             ]);
             $data['password'] = bcrypt($request->password); // Tương tự Hash::make($request->password);

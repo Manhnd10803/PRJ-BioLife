@@ -1,12 +1,17 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container-fluid px-4">
-    @isset($message_success)
-            <div class="alert alert-info" role="alert">
-                {{ $message_success }}
-            </div>
-        @endisset
+    
+   
     <div class="row">
+
+        @if(count($errors))
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $err)
+                    {{ $err }}
+                @endforeach
+            </div>
+        @endif
         <form action=" {{ route('admin.account.submitAdd') }} " method="post" class="form-add-cate">
             
             @csrf

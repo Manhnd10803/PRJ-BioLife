@@ -2,6 +2,13 @@
 @section('content')
 <div class="container-fluid px-4">
     <div class="row">
+        @if(count($errors))
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $err)
+                    {{ $err }}
+                @endforeach
+            </div>
+        @endif
         <form action=" {{ route('admin.account.submitEdit', $user->id) }} " method="post" class="form-add-cate">
             
             @csrf
