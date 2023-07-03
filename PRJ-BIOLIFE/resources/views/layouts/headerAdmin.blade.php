@@ -18,6 +18,8 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         {{-- CKEditor --}}
         <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
+        {{-- JS --}}
+        @yield('javascript')
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
     </head>
     <body class="sb-nav-fixed">

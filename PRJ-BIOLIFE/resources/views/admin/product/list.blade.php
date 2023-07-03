@@ -24,23 +24,31 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $i =1;
+                    @endphp
+                    @foreach ($products as $product)
                     <tr>
-                        <td>1</td>
-                        <td><img src="{{ asset('storage/images/products/p-01.jpg') }}" alt="" width="75"></td>
-                        <td>Pear</td>
-                        <td>123.00đ  <del>321.00đ</del></td>
-                        <td><input type="date" value="2023-06-19" disabled class="form-control"></td>
-                        <td>10kg</td>
-                        <td>Fruit</td>
+                        <td>{{ $i }}</td>
+                        <td><img src="{{ asset('storage/'.$product->srcImage) }}" alt="" width="75"></td>
+                        <td>{{ $product->nameProduct }}</td>
+                        <td>{{ $product->priceSaleProduct }}$  <del>{{ $product->priceProduct }}$</del></td>
+                        <td><input type="date" value="{{ $product->expProduct }}" disabled class="form-control"></td>
+                        <td>{{ $product->weightProduct }}</td>
+                        <td>{{ $product->nameCategory }}</td>
                         <td>
-                            <form action="" method="post">
+                            <form action="{{ route('admin.product.delete', $product->idProduct) }}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="material-icons text-sm me-2">delete</i>Delete</button>
-                                <a class="btn btn-link text-dark px-3 mb-0" href="{{ route('admin.product.edit') }}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
+                                <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0" onclick="return confirm('Are you sure?')"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                                <a class="btn btn-link text-dark px-3 mb-0" href="{{ route('admin.product.edit', $product->idProduct) }}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                             </form>
                         </td>
                     </tr>
+                    @php
+                        $i++;
+                    @endphp
+                    @endforeach
                 </tbody>
             </table>
         </div>

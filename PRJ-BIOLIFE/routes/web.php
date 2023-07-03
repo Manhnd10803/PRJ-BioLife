@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,7 +75,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
         Route::get('/list', [ProductController::class, 'index'])->name('admin.product.list');
         Route::get('/add', [ProductController::class, 'getFormAdd'])->name('admin.product.add');
         Route::post('/add', [ProductController::class, 'submitFormAdd'])->name('admin.product.store');
-        Route::get('/edit', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
-        Route::post('/edit', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
+        Route::get('/edit/{id}', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
+        Route::post('/edit/{id}', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
+        Route::delete('/delete/{id}', [ProductController::class, 'softDelete'])->name('admin.product.delete');
     });
 });
