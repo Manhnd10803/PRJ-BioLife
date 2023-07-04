@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
-use App\Models\Category;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
         Route::get('/add', [ProductController::class, 'getFormAdd'])->name('admin.product.add');
         Route::post('/add', [ProductController::class, 'submitFormAdd'])->name('admin.product.store');
         Route::get('/edit/{id}', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
-        Route::post('/update/{id}', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
-        
+        Route::post('/edit/{id}', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
+        Route::delete('/delete/{id}', [ProductController::class, 'softDelete'])->name('admin.product.delete');
     });
 });
