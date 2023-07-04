@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,9 +59,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
     });
     //Category Administration
     Route::prefix('category')->group(function(){
-        Route::get('/list', function(){ return view('admin.category.list'); })->name('admin.category.list');
-        Route::get('/add', function(){ return view('admin.category.add'); })->name('admin.category.add');
-        Route::get('/edit', function(){ return view('admin.category.edit'); })->name('admin.category.edit');
+        Route::get('/list', [CategoryController::class,'index'])->name('admin.category.list');
+        Route::get('/add', [CategoryController::class,'getFormAdd'])->name('admin.category.add');
+        Route::post('/add', [CategoryController::class,'submitFormAdd'])->name('admin.category.add');
+        Route::get('/edit', [CategoryController::class,'edit'])->name('admin.category.edit');
+        Route::get('/delete/{id}', [CategoryController::class, 'delete']);
+
     });
     //Bill Administration
     Route::prefix('bill')->group(function(){
@@ -73,7 +79,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
         Route::get('/list', [ProductController::class, 'index'])->name('admin.product.list');
         Route::get('/add', [ProductController::class, 'getFormAdd'])->name('admin.product.add');
         Route::post('/add', [ProductController::class, 'submitFormAdd'])->name('admin.product.store');
-        Route::get('/edit', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
-        Route::post('/edit', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
+        Route::get('/edit/{id}', [ProductController::class, 'getFormEdit'])->name('admin.product.edit');
+        Route::post('/update/{id}', [ProductController::class, 'submitFormEdit'])->name('admin.product.update');
+        
     });
 });

@@ -19,6 +19,8 @@
         {{-- CKEditor --}}
         <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}"/>
+        {{-- JS --}}
+        @yield('javascript')
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
