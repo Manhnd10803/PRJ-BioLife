@@ -29,13 +29,13 @@
 @section('content')
 <div class="container-fluid px-4">
     <div class="row">
-        <form class="form-add-cate" method="post" class="form-control" action="{{ route('admin.category.edit',$category->id) }}>
-            @method('PUT')
+        <form class="form-add-cate" method="post" class="form-control" action="{{ route('admin.category.update',$category->idCategory) }}">
             @csrf
+            @method('POST')
             <!-- ID input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form5Example1">ID Category : </label>  
-              <input type="number" id="id" name="id" class="form-control" placeholder="Autonumber" value="{{$category->id}}" id="id" disabled/>
+              <input type="number" id="id" name="id" class="form-control" placeholder="Autonumber" value="{{$category->idCategory}}" id="id" disabled/>
             </div>
             <!-- Name input -->
             <div class="form-outline mb-4">
@@ -50,7 +50,7 @@
               <p class="text-danger error_icon"></p>
             </div>
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Update Category</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4" onclick="return validate()">Update Category</button>
           </form>
     </div>
 </div>

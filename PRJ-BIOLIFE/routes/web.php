@@ -61,10 +61,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
     Route::prefix('category')->group(function(){
         Route::get('/list', [CategoryController::class,'index'])->name('admin.category.list');
         Route::get('/add', [CategoryController::class,'getFormAdd'])->name('admin.category.add');
-        Route::post('/add', [CategoryController::class,'submitFormAdd'])->name('admin.category.add');
-        Route::get('/edit', [CategoryController::class,'edit'])->name('admin.category.edit');
-        Route::get('/delete/{id}', [CategoryController::class, 'delete']);
-
+        Route::post('/add', [CategoryController::class,'submitFormAdd'])->name('admin.category.store');
+        Route::get('/edit/{id}', [CategoryController::class,'getFormEdit'])->name('admin.category.edit');
+        Route::post('/edit/{id}', [CategoryController::class,'submitFormEdit'])->name('admin.category.update');
+        Route::delete('/delete/{id}', [CategoryController::class, 'softDelete'])->name('admin.category.delete');
     });
     //Bill Administration
     Route::prefix('bill')->group(function(){
