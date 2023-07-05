@@ -10,7 +10,7 @@
             <a href="{{ route('admin.account.add') }}" class="btn btn-link text-success px-3 mb-0"><i class="material-icons text-sm me-2">add</i>Add</a>
         </div>
         
-        @if(session('success'))
+        {{-- @if(session('success'))
             <div class="alert alert-info" role="alert">
                 {{ session('success') }}
             </div>
@@ -19,7 +19,7 @@
             <div class="alert alert-warning" role="alert">
                 {{ $message_fail }}
             </div>
-        @endisset
+        @endisset --}}
 
         <div class="card-body">
             

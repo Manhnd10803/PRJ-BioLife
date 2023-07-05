@@ -52,9 +52,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
     Route::prefix('account')->group(function(){
         Route::get('/list', [AccountController::class, 'index'])->name('admin.account.list');
         Route::get('/add', [AccountController::class, 'getFormAdd'])->name('admin.account.add');
-        Route::post('/submitAdd', [AccountController::class, 'submitAdd'])->name('admin.account.submitAdd');
+        Route::post('/add', [AccountController::class, 'submitFormAdd'])->name('admin.account.store');
         Route::get('/edit/{id}', [AccountController::class, 'getFormEdit'])->name('admin.account.edit');
-        Route::put('/submitEdit/{id}', [AccountController::class, 'submitEdit'])->name('admin.account.submitEdit');
+        Route::put('/edit/{id}', [AccountController::class, 'submitFormEdit'])->name('admin.account.update');
         Route::get('/delete/{id}', [AccountController::class, 'deleteUser'])->name('admin.account.delete');
     });
     //Category Administration

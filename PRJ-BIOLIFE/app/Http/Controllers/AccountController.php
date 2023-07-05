@@ -102,7 +102,7 @@ class AccountController extends Controller
     public function getFormAdd(){
         return view('admin.account.add');
     }
-    function submitAdd(Request $request) {
+    function submitFormAdd(Request $request) {
         $request->validate([
             'username' => "required",
             'fullname' => "required",
@@ -122,19 +122,19 @@ class AccountController extends Controller
         $user->password = Hash::make($request->password);
         $user->role = $request->role;;
         $user->save();
-        
-        return redirect()->route('admin.account.list')->with('success','Created successfully');
+        toastr()->success('Successfully', 'Created Successfully');
+        return redirect()->route('admin.account.list');
         
     }
     public function getFormEdit($id){
         $user = User::find($id);
         return view('admin.account.edit', compact('user'));
     }
-    function submitEdit(Request $request , $id) {
+    function submitFormEdit(Request $request , $id) {
         $request->validate([
             'username' => "required",
             'fullname' => "required",
-            'email' => "required|unique:users|email",
+            'email' => "required|email",
             'address' => "required",
             'phone_number' => "required",
             'role' => "required",
@@ -159,8 +159,8 @@ class AccountController extends Controller
         }
 
         $user->update($data);
-
-        return redirect()->route('admin.account.edit', $user->id)->with('success','Update successfully');
+        toastr()->success('Successfully', 'Updated Successfully');
+        return redirect()->route('admin.account.edit', $user->id);
         
     }
     function deleteUser($id) {
