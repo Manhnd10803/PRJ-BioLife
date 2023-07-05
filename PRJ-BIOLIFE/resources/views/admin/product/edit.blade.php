@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-xl-3">
                     <label for="">Weight</label>
-                    <input type="number" name="weight" id="weight" class="form-control" value="{{ $product->weightProduct }}">
+                    <input type="text" name="weight" id="weight" class="form-control" value="{{ $product->weightProduct }}">
                     <p class="text-danger error_weight"></p>
                 </div>
                 <div class="col-xl-3">

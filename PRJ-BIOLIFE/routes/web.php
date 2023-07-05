@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +16,13 @@ use App\Models\Product;
 |
 */
 
-
-Route::get('/', function () {
-    return view('index');
-});
+//Home
+Route::get('/', [HomeController::class, 'index'])->name('home');
 // Product
-Route::get('/product-detail', function () {
-    return view('products.productDetail');
-});
-
+Route::get('/product', [HomeController::class, 'productList'])->name('productList');
+Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
+Route::get('/product-by-category/{id}', [HomeController::class, 'productCategory'])->name('productCategory');
+Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 // Account
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
 Route::post('/login', [AccountController::class, 'submitFormLogin'])->name('login');
