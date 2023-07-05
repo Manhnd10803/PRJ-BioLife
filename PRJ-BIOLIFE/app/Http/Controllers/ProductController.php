@@ -11,14 +11,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Carbon;
 
-use function PHPUnit\Framework\isNull;
-
 class ProductController extends Controller
 {
     public function index(){
         $images = Image::get();
         $products = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
-
         //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
         foreach($products as $product){
             foreach($images as $image){

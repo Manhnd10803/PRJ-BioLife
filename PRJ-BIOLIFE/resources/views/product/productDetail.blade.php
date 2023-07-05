@@ -5,7 +5,7 @@
 
     <!--Hero Section-->
     <div class="hero-section hero-background">
-        <h1 class="page-title">Organic Fruits</h1>
+        <h1 class="page-title">{{ $product->nameCategory }}</h1>
     </div>
     
     <!--Navigation section-->
@@ -13,8 +13,8 @@
         <nav class="biolife-nav">
             <ul>
                 <li class="nav-item"><a href="/" class="permal-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="permal-link">Natural Organic</a></li>
-                <li class="nav-item"><span class="current-page">Fresh Fruit</span></li>
+                <li class="nav-item"><a href="{{ route('productCategory', $product->idCategory) }}" class="permal-link">{{ $product->nameCategory }}</a></li>
+                <li class="nav-item"><span class="current-page">{{ $product->nameProduct }}</span></li>
             </ul>
         </nav>
     </div>
@@ -29,32 +29,29 @@
                 <div class="sumary-product single-layout">
                     <div class="media">
                         <ul class="biolife-carousel slider-for" data-slick='{"arrows":false,"dots":false,"slidesMargin":30,"slidesToShow":1,"slidesToScroll":1,"fade":true,"asNavFor":".slider-nav"}'>
-                            <li><img src="{{ asset('storage/images/details-product/p01.jpg') }}" alt="" width="500" height="500"></li>
-                            <li><img src="{{ asset('storage/images/details-product/p02.jpg') }}" alt="" width="500" height="500"></li>
-                            <li><img src="{{ asset('storage/images/details-product/p03.jpg') }}" alt="" width="500" height="500"></li>
-                            <li><img src="{{ asset('storage/images/details-product/p06.jpg') }}" alt="" width="500" height="500"></li>
-                            <li><img src="{{ asset('storage/images/details-product/p07.jpg') }}" alt="" width="500" height="500"></li>
+                            @foreach ($imagesProduct as $item)
+                            <li><img src="{{ asset('storage/'.$item->srcImage) }}" alt="" width="500" height="500"></li>
+                            @endforeach
                         </ul>
                         <ul class="biolife-carousel slider-nav" data-slick='{"arrows":false,"dots":false,"centerMode":false,"focusOnSelect":true,"slidesMargin":10,"slidesToShow":4,"slidesToScroll":1,"asNavFor":".slider-for"}'>
-                            <li><img src="{{ asset('storage/images/details-product/thumb_p01.jpg') }}" alt="" width="88" height="88"></li>
-                            <li><img src="{{ asset('storage/images/details-product/thumb_p02.jpg') }}" alt="" width="88" height="88"></li>
-                            <li><img src="{{ asset('storage/images/details-product/thumb_p03.jpg') }}" alt="" width="88" height="88"></li>
-                            <li><img src="{{ asset('storage/images/details-product/thumb_p06.jpg') }}" alt="" width="88" height="88"></li>
-                            <li><img src="{{ asset('storage/images/details-product/thumb_p07.jpg') }}" alt="" width="88" height="88"></li>
+                            @foreach ($imagesProduct as $item)
+                            <li><img src="{{ asset('storage/'.$item->srcImage) }}" alt="" width="500" height="500"></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="product-attribute">
-                        <h3 class="title">Organic Sweet Potatoes</h3>
+                        <h3 class="title">{{ $product->nameProduct }}</h3>
                         <div class="rating">
                             <p class="star-rating"><span class="width-80percent"></span></p>
                             <span class="review-count">(04 Reviews)</span>
                             <span class="qa-text">Q&amp;A</span>
                             <b class="category">By: Natural food</b>
                         </div>
-                        <span class="sku">Sku: #76584HH</span>
+                        <span class="sku">Sku: #BIOP{{ $product->idProduct }}LIFE</span>
                         <p class="excerpt">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
                         <div class="price">
-                            <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
+                            <ins><span class="price-amount"><span class="currencySymbol">$</span>{{ $product->priceSaleProduct }}</span></ins>
+                            <del class="price-amount"><span class="currencySymbol">$</span>{{ $product->priceProduct }}</del>
                         </div>
                         <div class="shipping-info">
                             <p class="shipping-day">3-Day Shipping</p>
@@ -119,27 +116,28 @@
                     </div>
                     <div class="tab-content">
                         <div id="tab_1st" class="tab-contain desc-tab active">
-                            <p class="desc">Quisque quis ipsum venenatis, fermentum ante volutpat, ornare enim. Phasellus molestie risus non aliquet cursus. Integer vestibulum mi lorem, id hendrerit ante lobortis non. Nunc ante ante, lobortis non pretium non, vulputate vel nisi. Maecenas dolor elit, fringilla nec turpis ac, auctor vulputate nulla. Phasellus sed laoreet velit.
-                                Proin fringilla urna vel mattis euismod. Etiam sodales, massa non tincidunt iaculis, mauris libero scelerisque justo, ut rutrum lectus urna sit amet quam. Nulla maximus vestibulum mi vitae accumsan. Donec sit amet ligula et enim semper viverra a in arcu. Vestibulum enim ligula, varius sed enim vitae, posuere molestie velit. Morbi risus orci, congue in nulla at, sodales fermentum magna.</p>
-                            <div class="desc-expand">
-                                <span class="title">Organic Fresh Fruit</span>
-                                <ul class="list">
-                                    <li>100% real fruit ingredients</li>
-                                    <li>100 fresh fruit bags individually wrapped</li>
-                                    <li>Blending Eastern & Western traditions, naturally</li>
-                                </ul>
-                            </div>
+                            @php
+                                echo $product->descriptionProduct;
+                            @endphp
                         </div>
                         <div id="tab_2nd" class="tab-contain addtional-info-tab">
                             <table class="tbl_attributes">
                                 <tbody>
                                 <tr>
-                                    <th>Color</th>
-                                    <td><p>Black, Blue, Purple, Red, Yellow</p></td>
+                                    <th>Weight</th>
+                                    <td><p>{{ $product->weightProduct }} kg</p></td>
                                 </tr>
                                 <tr>
-                                    <th>Size</th>
-                                    <td><p>S, M, L</p></td>
+                                    <th>Origin</th>
+                                    <td><p>{{ $product->originProduct }}</p></td>
+                                </tr>
+                                <tr>
+                                    <th>Manufacturing Date</th>
+                                    <td><p>{{ $product->mfgProduct }}</p></td>
+                                </tr>
+                                <tr>
+                                    <th>Expired Date</th>
+                                    <td><p>{{ $product->expProduct }}</p></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -371,19 +369,20 @@
                     </div>
                     <ul class="products-list biolife-carousel nav-center-02 nav-none-on-mobile" data-slick='{"rows":1,"arrows":true,"dots":false,"infinite":false,"speed":400,"slidesMargin":0,"slidesToShow":5, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 4}},{"breakpoint":992, "settings":{ "slidesToShow": 3, "slidesMargin":20 }},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":10}}]}'>
 
+                        @foreach ($relatedProducts as $item)
                         <li class="product-item">
                             <div class="contain-product layout-default">
                                 <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-13.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
+                                    <a href="{{ route('productDetail', $item->idProduct) }}" class="link-to-product">
+                                        <img src="{{ asset('storage/'.$item->srcImage) }}" alt="dd" width="270" height="270" class="product-thumnail">
                                     </a>
                                 </div>
                                 <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
+                                    <b class="categories">{{ $item->nameCategory }}</b>
+                                    <h4 class="product-title"><a href="{{ route('productDetail', $item->idProduct) }}" class="pr-name">{{ $item->nameProduct }}</a></h4>
                                     <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                                        <ins><span class="price-amount"><span class="currencySymbol">$</span>{{ $item->priceSaleProduct }}</span></ins>
+                                        <del><span class="price-amount"><span class="currencySymbol">$</span>{{ $item->priceProduct }}</span></del>
                                     </div>
                                     <div class="slide-down-box">
                                         <p class="message">All products are carefully selected to ensure food safety.</p>
@@ -396,157 +395,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="product-item">
-                            <div class="contain-product layout-default">
-                                <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-14.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                                    <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                                    </div>
-                                    <div class="slide-down-box">
-                                        <p class="message">All products are carefully selected to ensure food safety.</p>
-                                        <div class="buttons">
-                                            <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                            <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item">
-                            <div class="contain-product layout-default">
-                                <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-15.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                                    <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                                    </div>
-                                    <div class="slide-down-box">
-                                        <p class="message">All products are carefully selected to ensure food safety.</p>
-                                        <div class="buttons">
-                                            <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                            <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item">
-                            <div class="contain-product layout-default">
-                                <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-10.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                                    <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                                    </div>
-                                    <div class="slide-down-box">
-                                        <p class="message">All products are carefully selected to ensure food safety.</p>
-                                        <div class="buttons">
-                                            <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                            <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item">
-                            <div class="contain-product layout-default">
-                                <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-08.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                                    <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                                    </div>
-                                    <div class="slide-down-box">
-                                        <p class="message">All products are carefully selected to ensure food safety.</p>
-                                        <div class="buttons">
-                                            <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                            <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item">
-                            <div class="contain-product layout-default">
-                                <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-21.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                                    <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                                    </div>
-                                    <div class="slide-down-box">
-                                        <p class="message">All products are carefully selected to ensure food safety.</p>
-                                        <div class="buttons">
-                                            <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                            <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item">
-                            <div class="contain-product layout-default">
-                                <div class="product-thumb">
-                                    <a href="#" class="link-to-product">
-                                        <img src="{{ asset('storage/images/products/p-18.jpg') }}" alt="dd" width="270" height="270" class="product-thumnail">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <b class="categories">Fresh Fruit</b>
-                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
-                                    <div class="price">
-                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
-                                    </div>
-                                    <div class="slide-down-box">
-                                        <p class="message">All products are carefully selected to ensure food safety.</p>
-                                        <div class="buttons">
-                                            <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                            <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
+                        @endforeach
                     </ul>
                 </div>
                 
