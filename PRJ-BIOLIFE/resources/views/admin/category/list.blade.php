@@ -24,22 +24,22 @@
                     $i = 1;
                     @endphp
                     @foreach($category as $cate)
-                       <tr>
-                            <td>{{$i}}</td>
-                            <td>{{  $cate->nameCategory	}}</td>
-                            <td>{{  $cate->iconCategory	}}</td>
-                            <td>
-                                <form action="{{ route('admin.category.delete', $cate->idCategory) }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0" onclick="return confirm('Are you sure?')"><i class="material-icons text-sm me-2">delete</i>Delete</button>
-                                    <a class="btn btn-link text-dark px-3 mb-0" href="{{route('admin.category.edit',$cate->idCategory)}}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
-                                </form>
-                            </td>
-                       </tr>
-                        @php
-                        $i++;
-                        @endphp
+                    <tr>
+                        <td>{{$i}}</td>
+                        <td>{{  $cate->nameCategory	}}</td>
+                        <td>{{  $cate->iconCategory	}}</td>
+                        <td>
+                            <form action="{{ route('admin.category.delete', $cate->idCategory) }}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0" onclick="return confirm('Are you sure?')"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                                <a class="btn btn-link text-dark px-3 mb-0" href="{{route('admin.category.edit',$cate->idCategory)}}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
+                            </form>
+                        </td>
+                    </tr>
+                    @php
+                    $i++;
+                    @endphp
                     @endforeach
                 </tbody>
             </table>
