@@ -75,7 +75,7 @@
                 
                 <div ng-show="myForm.$submitted || myForm.phone_number.$dirty" class="form-text text-danger">
                     <span class="error" ng-show="myForm.phone_number.$error.required">The field is empty</span>
-                    {{-- <span class="error" ng-show="!myForm.phone_number.$error.pattern">Wrong phone number entered</span> --}}
+                    {{-- ng-pattern="(\+84|0)\d{9,10}" <span class="error" ng-show="!myForm.phone_number.$error.pattern">Wrong phone number entered</span> --}}
                     <span class="error" ng-show="((myForm.phone_number.$error.minlength || myForm.phone_number.$error.maxlength) &amp;&amp; myForm.phone_number.$dirty)">Phone number should be 10 digits</span>
 
                 </div>

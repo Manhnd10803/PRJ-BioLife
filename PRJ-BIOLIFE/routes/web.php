@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
-use App\Models\Product;
+use App\Http\Controllers\HomeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +19,13 @@ use App\Models\Product;
 |
 */
 
-
-Route::get('/', function () {
-    return view('index');
-});
+//Home
+Route::get('/', [HomeController::class, 'index'])->name('home');
 // Product
-Route::get('/product-detail', function () {
-    return view('products.productDetail');
-});
-
+Route::get('/product', [HomeController::class, 'productList'])->name('productList');
+Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
+Route::get('/product-by-category/{id}', [HomeController::class, 'productCategory'])->name('productCategory');
+Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 // Account
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
 Route::post('/login', [AccountController::class, 'submitFormLogin'])->name('login');
@@ -61,9 +62,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
     });
     //Category Administration
     Route::prefix('category')->group(function(){
-        Route::get('/list', function(){ return view('admin.category.list'); })->name('admin.category.list');
-        Route::get('/add', function(){ return view('admin.category.add'); })->name('admin.category.add');
-        Route::get('/edit', function(){ return view('admin.category.edit'); })->name('admin.category.edit');
+        Route::get('/list', [CategoryController::class,'index'])->name('admin.category.list');
+        Route::get('/add', [CategoryController::class,'getFormAdd'])->name('admin.category.add');
+        Route::post('/add', [CategoryController::class,'submitFormAdd'])->name('admin.category.store');
+        Route::get('/edit/{id}', [CategoryController::class,'getFormEdit'])->name('admin.category.edit');
+        Route::post('/edit/{id}', [CategoryController::class,'submitFormEdit'])->name('admin.category.update');
+        Route::delete('/delete/{id}', [CategoryController::class, 'softDelete'])->name('admin.category.delete');
     });
     //Bill Administration
     Route::prefix('bill')->group(function(){
