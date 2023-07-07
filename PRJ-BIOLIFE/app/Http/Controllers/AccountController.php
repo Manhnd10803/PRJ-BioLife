@@ -195,7 +195,11 @@ class AccountController extends Controller
     }
     function deleteUser($id) {
         // $user->delete();
-        User::find($id)->delete();
+        // User::find($id)->delete();
+        $user = User::find($id);
+        if(!is_null($user)){
+            $user->delete();
+        }
         return redirect()->route('admin.account.list')->with('success','Delete successfully');
     }
 }
