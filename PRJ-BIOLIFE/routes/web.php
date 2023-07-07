@@ -5,8 +5,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
-
-
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,16 +36,11 @@ Route::post('/forgot-password', [AccountController::class, 'submitFormForgotPass
 Route::get('/new-password/{id}/{token}', [AccountController::class, 'getFormNewPassword'])->name('new-password');
 Route::post('/new-password', [AccountController::class, 'submitFormNewPassword'])->name('submit-new-password');
 // Cart
-Route::get('/cart', function(){
-    return view('cart.cart');
-})->name('cart');
-Route::get('/bill-success', function(){
-    return view('cart.billSuccess');
-});
-Route::get('/check-out', function(){
-    return view('cart.checkOut');
-})->name('check-out');
-
+Route::get('/add-to-cart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
+Route::get('/view-cart', [OrderController::class, 'viewCart'])->name('viewCart');
+Route::get('/check-out', [OrderController::class, 'checkOut'])->name('checkOut');
+Route::post('/check-out', [OrderController::class, 'submitCheckOut'])->name('checkOut');
+Route::post('/update-quantity-in-cart', [OrderController::class, 'updateQuantityInCart'])->name('updateCart');
 
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){

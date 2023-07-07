@@ -129,8 +129,8 @@
                                             <b class="categories">{{ $item->nameCategory }}</b>
                                             <h4 class="product-title"><a href="{{ route('productDetail', $item->idProduct) }}" class="pr-name">{{ $item->nameProduct }}</a></h4>
                                             <div class="price">
-                                                <ins><span class="price-amount"><span class="currencySymbol">£</span>{{ $item->priceSaleProduct }}</span></ins>
-                                                <del><span class="price-amount"><span class="currencySymbol">£</span>{{ $item->priceProduct }}</span></del>
+                                                <ins><span class="price-amount"><span class="currencySymbol">$</span>{{ $item->priceSaleProduct }}</span></ins>
+                                                <del><span class="price-amount"><span class="currencySymbol">$</span>{{ $item->priceProduct }}</span></del>
                                             </div>
                                             <div class="shipping-info">
                                                 <p class="shipping-day">3-Day Shipping</p>
@@ -140,7 +140,7 @@
                                                 <p class="message">All products are carefully selected to ensure food safety.</p>
                                                 <div class="buttons">
                                                     <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                                    <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
+                                                    <a href="{{ route('addToCart', $item->idProduct) }}" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
                                                     <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
@@ -279,8 +279,8 @@
                                                 <b class="categories">Fresh Fruit</b>
                                                 <h4 class="product-title"><a href="#" class="pr-name" tabindex="0">National Fresh Fruit</a></h4>
                                                 <div class="price">
-                                                    <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                                    <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                                                    <ins><span class="price-amount"><span class="currencySymbol">$</span>85.00</span></ins>
+                                                    <del><span class="price-amount"><span class="currencySymbol">$</span>95.00</span></del>
                                                 </div>
                                             </div>
                                         </div>
@@ -296,8 +296,8 @@
                                                 <b class="categories">Fresh Fruit</b>
                                                 <h4 class="product-title"><a href="#" class="pr-name" tabindex="0">National Fresh Fruit</a></h4>
                                                 <div class="price">
-                                                    <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                                    <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                                                    <ins><span class="price-amount"><span class="currencySymbol">$</span>85.00</span></ins>
+                                                    <del><span class="price-amount"><span class="currencySymbol">$</span>95.00</span></del>
                                                 </div>
                                             </div>
                                         </div>
@@ -313,8 +313,8 @@
                                                 <b class="categories">Fresh Fruit</b>
                                                 <h4 class="product-title"><a href="#" class="pr-name" tabindex="0">National Fresh Fruit</a></h4>
                                                 <div class="price">
-                                                    <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                                    <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                                                    <ins><span class="price-amount"><span class="currencySymbol">$</span>85.00</span></ins>
+                                                    <del><span class="price-amount"><span class="currencySymbol">$</span>95.00</span></del>
                                                 </div>
                                             </div>
                                         </div>

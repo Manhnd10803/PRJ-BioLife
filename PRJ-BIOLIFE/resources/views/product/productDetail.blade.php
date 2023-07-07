@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <a href="#" class="btn add-to-cart-btn">add to cart</a>
+                            <a href="{{ route('addToCart', $product->idProduct) }}" class="btn add-to-cart-btn">add to cart</a>
                             <p class="pull-row">
                                 <a href="#" class="btn wishlist-btn">wishlist</a>
                                 <a href="#" class="btn compare-btn">compare</a>
@@ -388,7 +388,7 @@
                                         <p class="message">All products are carefully selected to ensure food safety.</p>
                                         <div class="buttons">
                                             <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
+                                            <a href="{{ route('addToCart', $item->idProduct) }}" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
                                             <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
@@ -398,7 +398,6 @@
                         @endforeach
                     </ul>
                 </div>
-                
             </div>
         </div>
     </div>
