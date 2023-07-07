@@ -35,7 +35,7 @@
             <!-- ID input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form5Example1">ID Category : </label>  
-              <input type="number" id="id" name="id" class="form-control" placeholder="Autonumber" value="{{$category->idCategory}}" id="id" disabled/>
+              <input type="number" name="id" class="form-control" placeholder="Autonumber" value="{{$category->idCategory}}" id="id" disabled/>
             </div>
             <!-- Name input -->
             <div class="form-outline mb-4">

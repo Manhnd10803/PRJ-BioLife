@@ -1,114 +1,111 @@
 @extends('layouts.appAdmin')
 @section('content')
-<div class="container-fluid px-4">
-    {{-- <div class="card mb-4 mt-4">
-        <div class="card-header">
-            <div>
-                <i class="fas fa-table me-1"></i>
-                Detail Bill : (ID bill)
+    <div class="page-contain checkout">
+        <!-- Main content -->
+        <div id="main-content" class="main-content">
+            <div class="container sm-margin-top-37px">
+                <div class="row">
+                    <!--checkout progress box-->
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                        <div class="checkout-progress-wrap">
+                            <ul class="steps">
+                                <li class="step 1st">
+                                    <div class="checkout-act active">
+                                        <h3 class="title-box"><span class="number">.</span>Fill in the information</h3>
+                                        <div class="box-content">
+                                            <div class="login-on-checkout">
+                                                <form action="{{ route('admin.bill.update',$bill->idBill) }}" name="frm-login" method="post" class="form-control">
+                                                    @csrf
+                                                    @method('POST')
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Full Name Bill</label>
+                                                        <input type="text" name="name" id="input_name" style="width: 100%;" value="{{$bill->fullnameBill}}" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label"">Address</label>
+                                                        <input type="text" name="name" id="input_address" value="{{$bill->addressBill}}" style="width: 100%;" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Phone number</label>
+                                                        <input type="text" name="name" id="input_phone" value="{{$bill->phoneBill}}" style="width: 100%;" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Email</label>
+                                                        <input type="text" name="name" id="input_email" value="{{$bill->emailBill}}" style="width: 100%;" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Payment methods</label>
+                                                        <input type="text" name="name" id="input_payment" value="{{$bill->paymentMethodBill}}" style="width: 100%;" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Date</label>
+                                                        <input type="text" name="name" id="input_payment" value="{{$bill->dateBill}}" style="width: 100%;" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Total Bill</label>
+                                                        <input type="text" name="name" id="input_payment" value="{{$bill->totalBill}}" style="width: 100%;" disabled>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label">Status Bill</label>
+                                                        <input type="text" name="status" id="input_payment" value="{{$bill->statusBill}}" style="width: 100%;">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary btn-block mb-4">Detail Bill</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {{-- <form action="" method="post">
+                                <label for="">Full Name</label>
+                                <input type="text" >
+                            </form> --}}
+                        </div>
+                    </div>
+
+                    <!--Order Summary-->
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 sm-padding-top-48px sm-margin-bottom-0 xs-margin-bottom-15px">
+                        <div class="order-summary sm-margin-bottom-80px">
+                            <div class="title-block">
+                                <h3 class="title">Order Summary</h3>
+                            </div>
+                            <div class="cart-list-box short-type">
+                                <ul class="subtotal">
+                                    <li>
+                                        <div class="subtotal-line">
+                                            <b class="stt-name">Subtotal</b>
+                                            <span class="stt-price">£170.00</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="subtotal-line">
+                                            <b class="stt-name">Shipping</b>
+                                            <span class="stt-price">£20.00</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="subtotal-line">
+                                            <b class="stt-name">Tax</b>
+                                            <span class="stt-price">£0.00</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="subtotal-line">
+                                            <a href="#" class="link-forward">Promo/Gift Certificate</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="subtotal-line">
+                                            <b class="stt-name">total:</b>
+                                            <span class="stt-price">£190.00</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
         </div>
-        <div class="card-body">
-            
-        </div>
-        
-    </div> --}}
-    <div class="card">
-        <div class="card-body">
-          <div class="container mb-5 mt-3">
-            <div class="row d-flex align-items-baseline">
-              <div class="col-xl-9">
-                <p style="color: #000000;font-size: 20px;">Detail Bill &gt;&gt; <strong>ID user: #123-123</strong></p>
-              </div>
-              <div class="col-xl-3 float-end">
-                <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
-                    class="fas fa-print text-primary"></i> Print</a>
-                <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i
-                    class="far fa-file-pdf text-danger"></i> Export</a>
-              </div>
-            </div>
-            <div class="container">
-              <div class="col-md-12">
-                <div class="text-center">
-                  <i class="far fa-building fa-4x ms-0" style="color:#8f8061 ;"></i>
-                  <p class="pt-2">ID Bill</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-8">
-                  <ul class="list-unstyled">
-                    <li class="text-muted">To : <span style="color:#8f8061 ;">Tên người nhận</span></li>
-                    <li class="text-muted">Address : jdkfjhk</li>
-                    <li class="text-muted">Email : dammebatdiet0550@gmail.com</li>
-                    <li class="text-muted"><i class="fas fa-phone"></i> Phone : 123-456-789</li>
-                  </ul>
-                </div>
-                <div class="col-xl-4">
-                  <p class="text-muted">Invoice</p>
-                  <ul class="list-unstyled">
-                    <li class="text-muted"><i class="fas fa-circle" style="color:#000000 ;"></i> <span
-                        class="fw-bold">ID bill:</span>#123-456</li>
-                    <li class="text-muted"><i class="fas fa-circle" style="color:#000000 ;"></i> <span
-                        class="fw-bold">Creation Date: </span>Jun 23,2021</li>
-                    <li class="text-muted"><i class="fas fa-circle" style="color:#000000;"></i> <span
-                        class="me-1 fw-bold">Status:</span><span class="badge bg-warning text-black fw-bold">
-                        Unpaid</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row my-2 mx-1 justify-content-center">
-                <div class="col-md-2 mb-4 mb-md-0">
-                  <div class="
-                              bg-image
-                              ripple
-                              rounded-5
-                              mb-4
-                              overflow-hidden
-                              d-block
-                              " data-ripple-color="light">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"
-                      class="w-100" height="100px" alt="Elegant shoes and shirt" />
-                    <a href="#!">
-                      <div class="hover-overlay">
-                        <div class="mask" style="background-color: hsla(0, 0%, 98.4%, 0.2)"></div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-7 mb-4 mb-md-0">
-                  <p class="fw-bold">Custom suit</p>
-                  <p class="mb-1">
-                    <span class="text-muted me-2">Size:</span><span>8.5</span>
-                  </p>
-                  <p>
-                    <span class="text-muted me-2">Color:</span><span>Gray</span>
-                  </p>
-                </div>
-                <div class="col-md-3 mb-4 mb-md-0">
-                  <h5 class="mb-2">
-                    <s class="text-muted me-2 small align-middle">$1500</s><span class="align-middle">$1050</span>
-                  </h5>
-                  <p class="text-danger"><small>You save 25%</small></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-xl-8">
-                  <p class="ms-3">Add additional notes and payment information</p>
-                </div>
-                <div class="col-xl-3">
-                  <ul class="list-unstyled">
-                    <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>$1050</li>
-                    <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Shipping</span>$15</li>
-                  </ul>
-                  <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span
-                      style="font-size: 25px;">$1065</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
+    </div>
 @endsection
