@@ -27,7 +27,9 @@
                     <tr>
                         <td>{{$i}}</td>
                         <td>{{  $cate->nameCategory	}}</td>
-                        <td><i class="{{ $cate->iconCategory }}" style="font-size: 26px"></i></td>
+                        <td>
+                            <img src="{{ $cate->iconCategory }}" style="font-size: 26px" alt="">
+                            <i class="{{ $cate->iconCategory }}" style="font-size: 26px"></i></td>
                         <td>
                             <form action="{{ route('admin.category.delete', $cate->idCategory) }}" method="post">
                                 @method('DELETE')
