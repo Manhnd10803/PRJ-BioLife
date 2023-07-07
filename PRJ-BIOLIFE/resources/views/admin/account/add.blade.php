@@ -3,15 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
     <div class="row cen" ng-app="">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-            </div>
-        @endif
+        
         <form action=" {{ route('admin.account.store') }} " method="post" class="form-add-cate" name="myForm" novalidate="" >
             
             @csrf

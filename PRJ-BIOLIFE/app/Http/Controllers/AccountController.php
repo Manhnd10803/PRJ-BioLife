@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AccountRequest;
 use App\Mail\ChangePassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -120,7 +121,7 @@ class AccountController extends Controller
         $user->address = $request->address;
         $user->phone = $request->phone_number;
         $user->password = Hash::make($request->password);
-        $user->role = $request->role;;
+        $user->role = $request->role;
         $user->save();
         toastr()->success('Successfully', 'Created Successfully');
         return redirect()->route('admin.account.list');
@@ -131,6 +132,7 @@ class AccountController extends Controller
         return view('admin.account.edit', compact('user'));
     }
     function submitFormEdit(Request $request , $id) {
+        
         $request->validate([
             'username' => "required",
             'fullname' => "required",
@@ -161,7 +163,7 @@ class AccountController extends Controller
         $user->update($data);
         toastr()->success('Successfully', 'Updated Successfully');
         return redirect()->route('admin.account.edit', $user->id);
-        
+
     }
     function deleteUser($id) {
         // $user->delete();
