@@ -45,11 +45,11 @@
                                                         <label for="">Payment methods</label>
                                                         <div style="margin: 3%">
                                                             <div class="row">
-                                                                <input type="radio" name="name" id="input_payment" value="" checked>
+                                                                <input type="radio" name="name" id="input_payment" value="1" checked>
                                                                 <label for="input_payment">Payment on delivery</label>
                                                             </div>
                                                             <div class="row">
-                                                                <input type="radio" name="name" id="input_payment" value="">
+                                                                <input type="radio" name="name" id="input_payment" value="2">
                                                                 <label for="input_payment">Online payment</label>
                                                             </div>
                                                         </div>
