@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
@@ -65,8 +66,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'ManagerLogin'] ,function(){
     });
     //Bill Administration
     Route::prefix('bill')->group(function(){
-        Route::get('/list', function(){ return view('admin.bill.list'); })->name('admin.bill.list');
-        Route::get('/detailBill', function (){ return view('admin.bill.detailBill');})->name('admin.bill.detailBill');
+        Route::get('/list', [BillController::class,'index'])->name('admin.bill.list');
+        Route::get('/detailBill/{id}', [BillController::class, 'getFormDetail'])->name('admin.bill.detailBill');
+        Route::post('/detailBill/{id}', [BillController::class, 'submitFormDetail'])->name('admin.bill.update');
         // Route::get('/add', function(){ return view('admin.bill.add'); })->name('admin.bill.add');
         // Route::get('/edit', function(){ return view('admin.bill.update'); })->name('admin.bill.edit');
         
