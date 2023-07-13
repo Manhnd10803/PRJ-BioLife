@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\Cart;
+use App\Models\Bill;
+use App\Models\Product;
+use App\Models\Image;
 
 class OrderController extends Controller
 {
@@ -166,4 +170,45 @@ class OrderController extends Controller
     //     return redirect()->back();
     //     // dd($request);
     // }
+    public function orderLookup(){
+        $idUser = Auth::user()->id;
+        //Lấy ra thông tin đơn hàng kèm theo số lượng sản phẩm trong đơn 
+        $bills = Cart::select(DB::raw('count(`carts`.`idBill`) as quantityProduct'), 'carts.idBill')->where('carts.idUser', '=', $idUser)->join('bills', 'carts.idBill', '=', 'bills.idBill')->groupBy('carts.idBill')->orderBy('carts.idBill', 'DESC')->get();
+        $bills->load('bill');
+        return view('cart.orderLookup', compact('bills'));
+    }
+    public function orderDetail($idBill){
+        $images = Image::get();
+        $bill = Bill::where('idBill', $idBill)->first();
+        $carts = Cart::Where('idBill', $idBill)->get();
+        //Lấy ra sản phẩm trong bill
+        $products = [];
+        $total = 0;
+        foreach($carts as $cart){
+            $product = Product::where('idProduct', $cart->idProduct)->first();
+            $product->quantity = $cart->quantityCart;
+            $total += $product->quantity * $product->priceSaleProduct;
+            array_push($products, $product);
+        };
+        //Lấy ảnh đại diện cho sản phẩm
+        foreach($products as $product){
+            foreach($images as $image){
+                if($image->idProduct == $product->idProduct ){
+                    $product->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        }
+        // dd($products);
+        return view('cart.detailOrder', compact('bill', 'products', 'total'));
+    }
+    public function confirmReceived($idBill){
+        $bill = Bill::where('idBill', $idBill)->first();
+        if($bill->statusBill == 6){
+            DB::table('bills')->where('idBill', $idBill)->update(['statusBill' => 7]);
+            return redirect()->route('orderLookup');
+        }else{
+            return view('errors.404');
+        }
+    }
 }

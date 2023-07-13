@@ -44,15 +44,15 @@
                                         <option value="1" @if ($bill->statusBill==1) selected @elseif($bill->statusBill > 1) disabled @endif>New orders</option>
                                         
                                         <option value="2" @if ($bill->statusBill==2) selected @elseif($bill->statusBill > 2) disabled @endif>Orders are being prepared</option>
-                                       
+
                                         <option value="3" @if ($bill->statusBill==3) selected @elseif($bill->statusBill > 3) disabled @endif>The order has been handed over to the shipping unit</option>
-                                       
+
                                         <option value="4" @if ($bill->statusBill==4) selected @elseif($bill->statusBill > 4) disabled @endif>Your order is being delivered to you</option>
 
                                         <option value="5" @if ($bill->statusBill==5) selected @elseif($bill->statusBill > 5) disabled @endif>Order delivered failed</option>
-                                       
+
                                         <option value="6" @if ($bill->statusBill==6) selected @elseif($bill->statusBill > 6) disabled @elseif($bill->statusBill == 5) disabled @endif>Order delivered successfully</option>
-                                       
+
                                         <option value="7" @if ($bill->statusBill==7) selected @endif disabled>Completed order</option>
                                 </select>
                             </td>
@@ -72,7 +72,7 @@
                     <td><img src="{{ asset('storage/'.$pro->srcImage) }}" alt="" width="75"></td>
                     <td>{{$pro->nameProduct }}</td>
                     <td>{{$pro->priceSaleProduct }}$  <del style="color: red">{{$pro->priceProduct }}$</del></td>
-                    <td>{{$cart->quantityCart}}</td>
+                    <td>{{$pro->quantity}}</td>
                     </tr>
                 @endforeach
                 </table>

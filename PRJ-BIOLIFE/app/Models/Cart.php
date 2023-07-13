@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+    //Relation sang bảng bill
+    public function bill(){
+        return $this->belongsTo(Bill::class, 'idBill', 'idBill');
+    }
 }

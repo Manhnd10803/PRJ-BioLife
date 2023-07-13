@@ -66,7 +66,7 @@
                             </select>
                         </li>
                         @if (Auth::check())
-                        <li><a href="" class="login-link"><i class="biolife-icon icon-login"></i> {{ Auth::user()->name }} </a></li>
+                        <li><a href="" class="login-link"><i class="biolife-icon icon-login"></i> {{ Auth::user()->name }} </a>
                         @else
                         <li><a href="{{ route('login') }}" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>  
                         @endif
@@ -86,7 +86,7 @@
                                 <li class="menu-item"><a href="/">Home</a></li>
                                 <li class="menu-item"><a href="{{ route('productList') }}">Products</a></li>
                                 <li class="menu-item"><a href="">Blog</a></li>
-                                <li class="menu-item"><a href="">Order Lookup</a></li>
+                                <li class="menu-item"><a href="{{ route('orderLookup') }}">Order Lookup</a></li>
                                 <li class="menu-item"><a href="">About Us</a></li>
                                 <li class="menu-item"><a href="">Contact</a></li>
                             </ul>

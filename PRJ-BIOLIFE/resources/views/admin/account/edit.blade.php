@@ -42,15 +42,15 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Phone Number</label>
-                <input type="text" name="phone_number" value="{{ $user->phone }}"  class="form-control" id="email" required>
+                <input type="text" name="phone_number" value="{{ $user->phone }}"  class="form-control" id="phone" required>
                 
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Role</label>
                 <select name="role" id="" class="form-select">
-                    <option value="1" @if (!$user->role) selected @endif >Staff</option>
-                    <option value="1" @if (!$user->role) selected @endif >Admin</option>
-                    <option value="0" @if (!$user->role) selected @endif >Customer</option>
+                    <option value="2" @if ($user->role == 2) selected @endif >Staff</option>
+                    <option value="1" @if ($user->role == 1) selected @endif >Admin</option>
+                    <option value="0" @if ($user->role == 0) selected @endif >Customer</option>
                 </select>
                 
             </div>
