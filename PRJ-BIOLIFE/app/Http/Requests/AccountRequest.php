@@ -21,14 +21,35 @@ class AccountRequest extends FormRequest
      */
     public function rules(): array
     {
+        // $rules = [];
+        // // Lấy ra các phương thức đang hoạt động
+        // $curentAction = $this->route()->getActionMethod();
+        // switch ($this->method()) :
+        //     case 'POST' :
+        //         switch ($curentAction) :
+        //             case 'submitFormEdit' :
+        //                 $rules = [
+        //                     'username' => "required",
+        //                     'fullname' => "required",
+        //                     'email' => "required|email",
+        //                     'address' => "required",
+        //                     'phone_number' => "required",
+        //                     'password' => "required|min:8|max:32",
+        //                     'new_password' => "min:8|max:32",
+        //                     'role' => "required"
+        //                 ];
+        //         endswitch;
+        // endswitch;
+        // return $rules;
+
         return [
             'username' => "required",
             'fullname' => "required",
             'email' => "required|email",
             'address' => "required",
             'phone_number' => "required",
-            'password' => "min:8|max:32",
-            'repeat_password' => "same:password",
+            'password' => "required|min:8|max:32",
+            'new_password' => "min:8|max:32",
             'role' => "required"
         ];
     }

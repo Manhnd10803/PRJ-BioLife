@@ -171,26 +171,50 @@ class AccountController extends Controller
         ]);
         $user = User::find($id);
         
-        $data = [
-            'name' => $request->username,
-            'fullname' => $request->fullname,
-            'email' => $request->email,
-            'address' => $request->address,
-            'phone' => $request->phone_number,
-            'role' => $request->role,
-        ];
+        // if ($request->password) {
+        //     $request->validate([
+        //         'password' => "required|min:8|max:32",
+        //         'new_password' => "min:8|max:32",
+        //     ]);
+        //     $data['password'] = bcrypt($request->new_password); 
+        //     dd(123);
+        //     // Tương tự Hash::make($request->password);
+        // }
 
-        if ($request->password) {
-            $request->validate([
-                'password' => "required|min:8|max:32",
-                'repeat_password' => "same:password",
-            ]);
-            $data['password'] = bcrypt($request->password); // Tương tự Hash::make($request->password);
+        $currentPassword = $request->input('password');
+        $newPassword = $request->input('new_password');
+        // Kiểm tra pass được nhập vào có trùng với pass có trong database hay không
+        if(Hash::check($currentPassword,$user->password)){
+            $data = [
+                'name' => $request->username,
+                'fullname' => $request->fullname,
+                'email' => $request->email,
+                'address' => $request->address,
+                'phone' => $request->phone_number,
+                'role' => $request->role,
+            ];
+            // Kiểm tra khi nhập new_password
+            if (!empty($newPassword)) {
+                // Nếu đã nhập new_password, kiểm tra đã nhập chính xác password của account hay chưa
+                if (Hash::check($currentPassword, $user->password)) {
+                    // Khi pass đúng, cập nhật mật khẩu mới
+                    $user->password = Hash::make($newPassword);
+                } else {
+                    // Khi pass hiện sai, hiển thị thông báo lỗi
+                    toastr()->error('Errors', 'You must enter the exact password of this account to be able to update this account.');
+                    return back();
+                }
+            }
+            $user->update($data);
+            toastr()->success('Successfully', 'Updated Successfully');
+            return redirect()->route('admin.account.edit', $user->id);
+        }else{
+            
+            toastr()->error('Errors', 'You must enter the exact password of this account to be able to update this account.');
+            return back();
         }
-
-        $user->update($data);
-        toastr()->success('Successfully', 'Updated Successfully');
-        return redirect()->route('admin.account.edit', $user->id);
+        
+        
 
     }
     function deleteUser($id) {

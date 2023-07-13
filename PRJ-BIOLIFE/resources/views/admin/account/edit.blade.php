@@ -1,9 +1,7 @@
 @extends('layouts.appAdmin')
 @section('content')
 <div class="container-fluid px-4">
-    @if (Session::has('success'))
-        <span class="badge text-bg-danger" style="color: red;">{{ Session::get('success') }}</span>
-    @endif
+    
     <div class="row ">
         
         <form action=" {{ route('admin.account.update', $user->id) }} " method="post" class="form-add-cate" id="myForm" novalidate>
@@ -27,8 +25,8 @@
                 
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">Repeat Password</label>
-                <input type="password" name="repeat_password" class="form-control" id="repeat_password" required>
+                <label for="" class="form-label">New Password</label>
+                <input type="password" name="new_password" class="form-control" id="new_password" >
                 
             </div>
             
