@@ -161,10 +161,10 @@
                                                                 <input type="number" class="input-qty" name="cart[id127][qty]" id="cart[id127][qty]" value="{{ $item->qtyInCart }}" disabled>
                                                             </div>
                                                         </div>
-                                                        <div class="action">
+                                                        {{-- <div class="action">
                                                             <a href="#" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                            <a href="#" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                        </div>
+                                                            <a href="{{ route('deleteAProductInCart', $item->idProduct) }}" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                        </div> --}}
                                                     </div>
                                                 </li>
                                                 @endforeach

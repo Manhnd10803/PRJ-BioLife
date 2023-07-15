@@ -87,12 +87,15 @@ class OrderController extends Controller
         }
     }
     public function viewCart(){
-        $billTotal = 0;
-        foreach(Session::get('cart') as $item){
-            $item->total = $item->qtyInCart * $item->priceSaleProduct;
-            $billTotal += $item->total;
+        if(Session::get('cart') != null){
+            $billTotal = 0;
+            foreach(Session::get('cart') as $item){
+                $item->total = $item->qtyInCart * $item->priceSaleProduct;
+                $billTotal += $item->total;
+            }
+            return view('cart.cart', compact('billTotal'));
         }
-        return view('cart.cart', compact('billTotal'));
+        return view('cart.cart')->with('message', 'No product in your shopping cart');
     }
     public function checkOut(){
         $billTotal = 0;
@@ -150,26 +153,65 @@ class OrderController extends Controller
         }
         return view('cart.billSuccess');
     }
-    // public function updateQuantityInCart(Request $request){
-    //     dd($request);
-    //     // TH khách vãng lai
-    //     if(!Auth::check()){
-    //         //lấy ra mảng id
-    //         foreach(Session::get('cart') as $cart){
-    //             foreach($request as $key => $value){
-    //                 return $key;
-    //                 if($cart->idProduct == $key){
-    //                     $cart->qtyInCart = $value;
-
-    //                 }
-    //             }
-    //         }
-    //     }else{
-
-    //     }
-    //     return redirect()->back();
-    //     // dd($request);
-    // }
+    public function updateQuantityInCart(Request $request){
+        // TH khách vãng lai
+        if(!Auth::check()){
+            //Cập nhật số lượng lần lượt sản phẩm trong cart
+            $i = 0;
+            foreach(Session::get('cart') as $cart){
+                $cart->qtyInCart = $request->$i;
+                $i++;
+            }
+        }else{
+            // TH khách đã đăng nhập
+            $i = 0;
+            foreach(Session::get('cart') as $cart){
+                $cart->qtyInCart = $request->$i;
+                Cart::where('idProduct', $cart->idProduct)->where('idUser', Auth::user()->id)->where('idBill', '=', null)->update(['quantityCart' => $cart->qtyInCart]);
+                $i++;
+            }
+        }
+        return redirect()->route('viewCart');
+    }
+    public function deleteAProductInCart($idProduct){
+        // dd(Session::get('cart'));
+        //TH khách vãng lai
+        if(!Auth::check()){
+            $oldCart = Session::get('cart');
+            Session::forget('cart');
+            Session::put('cart');
+            foreach($oldCart as $cart){
+                if($cart->idProduct != $idProduct){
+                    Session::push('cart', $cart);
+                }
+            }
+        }else{
+            //TH khách đăng nhập tài khoản
+            //Xóa sản phẩm trong giỏ hàng trên db
+            Cart::where('idProduct', $idProduct)->where('idUser', Auth::user()->id)->where('idBill', '=', null)->delete();
+            //Xóa trong giỏ session
+            $oldCart = Session::get('cart');
+            Session::forget('cart');
+            Session::put('cart');
+            foreach($oldCart as $cart){
+                if($cart->idProduct != $idProduct){
+                    Session::push('cart', $cart);
+                }
+            }
+        }
+        return redirect()->route('viewCart');
+    }
+    public function deleteAllProductInCart(){
+        if(!Auth::check()){
+            Session::forget('cart');
+            Session::put('cart');
+        }else{
+            Session::forget('cart');
+            Session::put('cart');
+            Cart::where('idUser', Auth::user()->id)->where('idBill', '=', null)->delete();
+        }
+        return redirect()->route('viewCart');
+    }
     public function orderLookup(){
         $idUser = Auth::user()->id;
         //Lấy ra thông tin đơn hàng kèm theo số lượng sản phẩm trong đơn 

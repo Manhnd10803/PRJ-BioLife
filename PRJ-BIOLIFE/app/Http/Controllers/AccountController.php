@@ -49,10 +49,10 @@ class AccountController extends Controller
                 //Xóa session giỏ hàng và cập nhật lại session giỏ hàng
                 Session::forget('cart');
                 //Lấy ra tất cả sản phẩm trong giỏ hàng theo id người dùng
-                $cart = DB::table('carts')->where('idUser', '=', $user->id)->get();
+                $carts = DB::table('carts')->where('idUser', '=', $user->id)->get();
                 // Lọc ra sản phẩm chưa được thanh toán 
                 $filter_cart = [];
-                foreach($cart as $item){
+                foreach($carts as $item){
                     if($item->idBill == ''){
                         array_push( $filter_cart , $item);
                     }

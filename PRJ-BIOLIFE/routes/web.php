@@ -40,6 +40,8 @@ Route::post('/new-password', [AccountController::class, 'submitFormNewPassword']
 Route::get('/add-to-cart/{id}', [OrderController::class, 'addToCart'])->name('addToCart');
 Route::get('/view-cart', [OrderController::class, 'viewCart'])->name('viewCart');
 Route::post('/update-quantity-in-cart', [OrderController::class, 'updateQuantityInCart'])->name('updateCart'); 
+Route::get('/delete-a-product-in-cart/{id}', [OrderController::class, 'deleteAProductInCart'])->name('deleteAProductInCart');
+Route::get('/delete-all-product-in-cart', [OrderController::class, 'deleteAllProductInCart'])->name('deleteAllProductInCart');
 // Check out
 Route::get('/check-out', [OrderController::class, 'checkOut'])->name('checkOut');
 Route::post('/check-out', [OrderController::class, 'submitCheckOut'])->name('checkOut');
