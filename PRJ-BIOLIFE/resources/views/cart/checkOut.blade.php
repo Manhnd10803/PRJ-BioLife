@@ -5,12 +5,12 @@
             let fullname = document.querySelector('#input_name').value;
             let address = document.querySelector('#input_address').value;
             let phone = document.querySelector('#input_phone').value;
-            let email = document.querySelector('#input_email').value;
+            // let email = document.querySelector('#input_email').value;
             
             let error_name = document.querySelector('.error_name');
             let error_address = document.querySelector('.error_address');
             let error_phone = document.querySelector('.error_phone');
-            let error_email = document.querySelector('.error_email');
+            // let error_email = document.querySelector('.error_email');
 
             let check = true;
             if(fullname == ''){
@@ -31,12 +31,12 @@
             }else{
                 error_phone.innerHTML = "";
             }
-            if(email == ''){
-                error_email.innerHTML = "You can't leave it blank";
-                check = false;
-            }else{
-                error_email.innerHTML = "";
-            }
+            // if(email == ''){
+            //     error_email.innerHTML = "You can't leave it blank";
+            //     check = false;
+            // }else{
+            //     error_email.innerHTML = "";
+            // }
             return check;
         }
     </script>
@@ -88,7 +88,7 @@
                                                     <p class="form-row">
                                                         <label for="input_email">Email</label>
                                                         <input type="text" name="email" id="input_email" value="@php if(Auth::check()){echo Auth::user()->email;} @endphp" placeholder="Your email" style="width: 100%;">
-                                                        <p class="text-danger error_email"></p>
+                                                        {{-- <p class="text-danger error_email"></p> --}}
                                                     </p>
                                                     <p class="form-row">
                                                         <label for="">Payment methods</label>

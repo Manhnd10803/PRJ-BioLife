@@ -160,7 +160,6 @@ class AccountController extends Controller
         return view('admin.account.edit', compact('user'));
     }
     function submitFormEdit(Request $request , $id) {
-        
         $request->validate([
             'username' => "required",
             'fullname' => "required",

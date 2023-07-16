@@ -26,8 +26,8 @@
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        {{-- <th>STT</th> --}}
-                        <th>ID</th>
+                        <th>STT</th>
+                        {{-- <th>ID</th> --}}
                         <th>Username</th>
                         <th>Fullname</th>
                         {{-- <th>Password</th> --}}
@@ -39,31 +39,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @php
+                        $stt = 1;
+                    @endphp
                     @foreach ($users as $u)
-                        
                         <tr>
-                            {{-- <td> 1</td> --}}
-                            <td> {{ $u->id }} </td>
+                            <td>{{ $stt }}</td>
+                            {{-- <td> {{ $u->id }} </td> --}}
                             <td> {{ $u->name }} </td>
                             <td> {{ $u->fullname }}</td>
-                            {{-- <td> {{ $u->password }} </td> --}}
                             <td> {{ $u->phone }}</td>
                             <td> {{ $u->address }}</td>
                             <td> {{ $u->email }}</td>
-                            <td> {{ $u->role }}</td>
+                            <td> @if ( $u->role == 0) Customer @elseif( $u->role  == 1) Admin @elseif( $u->role  == 2) Staff @endif </td>
                             <td>
                                 <form action="{{ route('admin.account.delete', $u->id) }}" method="get">
                                     <a class="btn btn-link text-dark px-3 mb-0" href="{{ route('admin.account.edit',$u->id) }}"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="material-icons text-sm me-2">delete</i>Delete</button>
-                                    
                                 </form>
                             </td>
                         </tr>
+                    @php
+                        $stt++;
+                    @endphp
                     @endforeach
-                    
                 </tbody>
             </table>
         </div>

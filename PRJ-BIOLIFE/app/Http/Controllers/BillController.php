@@ -17,11 +17,18 @@ class BillController extends Controller
         $bill = DB::table('bills')->where('idBill', '=', $idBill)->first();
         $images = DB::table('images')->get();
         $idProducts = DB::table('carts')->where('idBill', '=', $idBill)->get('idProduct');
+        $carts = DB::table('carts')->where('idBill','=',$idBill)->get();
+        // dd($carts);
         $arrayProduct = [];
         foreach($idProducts as $idProduct){
             $product = DB::table('products')->where('idProduct', '=', $idProduct->idProduct)->first();
+            foreach($carts as $cart){
+                if($cart->idProduct == $idProduct->idProduct){
+                    $product->quantity = $cart->quantityCart;
+                    break;
+                }
+            }
             array_push($arrayProduct, $product);
-            $cart = DB::table('carts')->where('idBill','=',$idBill)->first();
         }
         
         //Thêm ảnh đầu tiên làm ảnh đại diện cho sản phẩm

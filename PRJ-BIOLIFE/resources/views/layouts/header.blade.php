@@ -66,7 +66,7 @@
                             </select>
                         </li>
                         @if (Auth::check())
-                        <li><a href="" class="login-link"><i class="biolife-icon icon-login"></i> {{ Auth::user()->name }} </a></li>
+                        <li><a href="" class="login-link"><i class="biolife-icon icon-login"></i> {{ Auth::user()->name }} </a>
                         @else
                         <li><a href="{{ route('login') }}" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>  
                         @endif
@@ -86,7 +86,7 @@
                                 <li class="menu-item"><a href="/">Home</a></li>
                                 <li class="menu-item"><a href="{{ route('productList') }}">Products</a></li>
                                 <li class="menu-item"><a href="">Blog</a></li>
-                                <li class="menu-item"><a href="">Order Lookup</a></li>
+                                <li class="menu-item"><a href="{{ route('orderLookup') }}">Order Lookup</a></li>
                                 <li class="menu-item"><a href="">About Us</a></li>
                                 <li class="menu-item"><a href="">Contact</a></li>
                             </ul>
@@ -161,10 +161,10 @@
                                                                 <input type="number" class="input-qty" name="cart[id127][qty]" id="cart[id127][qty]" value="{{ $item->qtyInCart }}" disabled>
                                                             </div>
                                                         </div>
-                                                        <div class="action">
+                                                        {{-- <div class="action">
                                                             <a href="#" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                            <a href="#" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                        </div>
+                                                            <a href="{{ route('deleteAProductInCart', $item->idProduct) }}" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                        </div> --}}
                                                     </div>
                                                 </li>
                                                 @endforeach
