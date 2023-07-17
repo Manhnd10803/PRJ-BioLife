@@ -39,6 +39,19 @@ class HomeController extends Controller
                 }
             }
         };
+        
+        $products = Product::paginate(10);
+        // => Khi phân trang thì ảnh sản phẩm không hiển thị được
+        // Gán lại ảnh cho product
+        foreach($products as $product){
+            foreach($images as $image){
+                if($image->idProduct == $product->idProduct ){
+                    $product->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        }
+
         return view('product.productList', compact('products', 'categories', 'hotProducts'));
     }
     public function productDetail($idProduct){

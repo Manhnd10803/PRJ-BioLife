@@ -14566,3 +14566,8 @@ body.open-quickview-block .biolife-quickview-block{
         display: none !important;
     }
 }
+/* .page-item .active span.page-link:focus {
+    color: #fff;
+    background-color: #e73918;
+    border-color: #e73918;
+} */
