@@ -40,7 +40,7 @@ class BillController extends Controller
                 }
             }
         };
-        return view('admin.bill.detailBill',compact('bill','arrayProduct','cart'));
+        return view('admin.bill.detailBill',compact('bill','arrayProduct','carts'));
     }
     public function submitFormDetail(Request $request, $idBill){
         DB::table('bills')->where('idBill', '=' , $idBill)->update([
