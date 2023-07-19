@@ -5935,8 +5935,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination>.active>span:focus {
     z-index: 3;
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7;
+    background-color: #e73918;
+    border-color: #e73918;
     cursor: default
 }
 
