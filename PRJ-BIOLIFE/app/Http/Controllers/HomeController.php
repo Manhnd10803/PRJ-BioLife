@@ -19,15 +19,6 @@ class HomeController extends Controller
         $images = Image::get();
         $categories = Category::get();
         $products = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
-        //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
-        foreach($products as $product){
-            foreach($images as $image){
-                if($image->idProduct == $product->idProduct ){
-                    $product->srcImage = $image->srcImage;
-                    break;
-                }
-            }
-        };
         //top 10 sản phẩm có lượt xem nhiều
         $hotProducts = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->orderByDesc('viewProduct')->limit(10)->get();
         //Ảnh đại diện cho mỗi sản phẩm trong top 10
@@ -40,9 +31,9 @@ class HomeController extends Controller
             }
         };
         
-        $products = Product::paginate(10);
+        $products = Product::paginate(9);
         // => Khi phân trang thì ảnh sản phẩm không hiển thị được
-        // Gán lại ảnh cho product
+        // Gán ảnh cho product
         foreach($products as $product){
             foreach($images as $image){
                 if($image->idProduct == $product->idProduct ){

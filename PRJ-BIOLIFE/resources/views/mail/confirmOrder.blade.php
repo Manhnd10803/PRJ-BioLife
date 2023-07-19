@@ -342,7 +342,7 @@
 					  			<div class="text">
 					  				<h3>{{ $pro->nameProduct }}</h3>
 					  				<span>{{ $pro->weightProduct }} gram</span>
-					  				<p>{{ $pro->descriptionProduct }}</p>
+					  				{{-- <p>{{ $pro->descriptionProduct }}</p> --}}
 					  			</div>
 					  		</div>
 					  	</td>
@@ -356,7 +356,7 @@
                       <tr>
                         <td valign="middle" width="60%" style="text-align:left; padding: 0 2.5em;">Total order value</td>
                         <td valign="middle" width="20%" style="text-align:left; padding: 0 2.5em;"></td>
-                        <td valign="middle" width="20%" style="text-align:left; padding: 0 2.5em;">{{ $total }}</td>
+                        <td valign="middle" width="20%" style="text-align:left; padding: 0 2.5em;">${{ $total }}</td>
                       </tr>
 					  
 					  <tr>

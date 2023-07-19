@@ -146,34 +146,15 @@ class OrderController extends Controller
                 'totalBill' => $request->billTotal
             ]);
             
-            
             $idBill = DB::table('bills')->orderByDesc('idBill')->first()->idBill;
             //Cập nhật id bill cho những sản phẩm trong giỏ khi đã thanh toán
             $carts = DB::table('carts')->where('idUser', '=', Auth::user()->id)->get();
             foreach($carts as $item){
                 if($item->idBill == null){
                     DB::table('carts')->where('idCart', '=', $item->idCart)->update(['idBill' => $idBill]);
-
                 }
             }
             
-            // Lấy thông tin sản phẩm trong giỏ hàng
-            // $idProducts = DB::table('carts')->where('idBill', '=', $idBill)->get('idProduct');
-            
-            // $products = [];
-            // foreach (Session::get('carts') as $item) {
-            //     $product = [
-            //         'nameProduct' => $item->nameProduct,
-            //         'priceProduct' => $item->priceProduct,
-            //         'priceSaleProduct' => $item->priceSaleProduct,
-            //         'weightProduct' => $item->weightProduct,
-            //         'quantityCart' => $item->quantityCart,
-            //         'subtotal' => $item->subtotalPrice
-            //     ];
-            //     array_push($products, $product);
-            // }
-
-            // $bill = DB::table('bills')->where('idBill', '=', $idBill)->first();
             $images = DB::table('images')->get();
             $idProducts = DB::table('carts')->where('idBill', '=', $idBill)->get('idProduct');
             $carts = DB::table('carts')->where('idBill','=',$idBill)->get();
@@ -202,7 +183,6 @@ class OrderController extends Controller
             };
         
             //Lấy thông tin khách hàng
-
             $fullname = $request->name;
             $phone = $request->phone;
             $email = $request->email;
@@ -213,20 +193,8 @@ class OrderController extends Controller
             // Gửi email xác nhận đơn hàng
             Mail::to($request->email)->send(new OrderConfirmation($fullname, $phone, $email, $address, $paymentMethod, $total,$arrayProduct));
             
-            // $data = [
-            //     'fullnameBill' => $request->name,
-            //     'phoneBill' => $request->phone,
-            //     'emailBill' => $request->email,
-            //     'addressBill' => $request->address,
-            //     'paymentMethodBill' => $request->payment,
-            //     'dateBill' => Carbon::now('Asia/Ho_Chi_Minh'),
-            //     'totalBill' => $request->billTotal
-            // ];
-            // Mail::to($email->email)->send(new OrderConfirmation($data));
-            
             Session::forget('cart');
             Session::put('cart');
-            
         }
         return view('cart.billSuccess');
     }

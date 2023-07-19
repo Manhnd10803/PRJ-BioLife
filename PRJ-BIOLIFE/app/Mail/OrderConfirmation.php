@@ -49,7 +49,7 @@ class OrderConfirmation extends Mailable
         );
     }
 
-     /**
+    /**
      * Build the message.
      *
      * @return $this
