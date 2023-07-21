@@ -128,7 +128,7 @@
                                         </div>
                                         <div class="info">
                                             <b class="categories">{{ $item->nameCategory }}</b>
-                                            <h4 class="product-title"><a href="{{ route('productDetail', $item->idProduct) }}" class="pr-name">{{ $item->nameProduct }}</a></h4>
+                                            <h4 class="product-title"><a href="{{ route('productDetail', ['id'=>$item->idProduct]) }}" class="pr-name">{{ $item->nameProduct }}</a></h4>
                                             <div class="price">
                                                 <ins><span class="price-amount"><span class="currencySymbol">$</span>{{ $item->priceSaleProduct }}</span></ins>
                                                 <del><span class="price-amount"><span class="currencySymbol">$</span>{{ $item->priceProduct }}</span></del>
@@ -154,12 +154,13 @@
 
                         <div class="biolife-panigations-block">
                             <ul class="panigation-contain">
-                                <li><span class="current-page">1</span></li>
+                                <li>{{ $products->links() }}</li>
+                                {{-- <li><span class="current-page">1</span></li>
                                 <li><a href="#" class="link-page">2</a></li>
                                 <li><a href="#" class="link-page">3</a></li>
                                 <li><span class="sep">....</span></li>
                                 <li><a href="#" class="link-page">20</a></li>
-                                <li><a href="#" class="link-page next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                <li><a href="#" class="link-page next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li> --}}
                             </ul>
                         </div>
 

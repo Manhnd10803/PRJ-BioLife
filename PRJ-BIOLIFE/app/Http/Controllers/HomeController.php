@@ -82,6 +82,10 @@ class HomeController extends Controller
     public function productCategory($idCategory){
         $images = Image::get();
         $products = Product::where('products.idCategory', '=', $idCategory)->join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
+
+        // Phân trang
+        $products = Product::where('idCategory', $idCategory)->paginate(9);
+        
         //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
         foreach($products as $product){
             foreach($images as $image){
@@ -106,6 +110,7 @@ class HomeController extends Controller
         if(!isset($products[0])){
             return redirect('/');
         }
+        
         return view('product.productCategory', compact('products', 'hotProducts'));
     }
     public function productSearch(Request $request){
@@ -113,7 +118,9 @@ class HomeController extends Controller
             $images = Image::get();
             $categories = Category::get();
             $products = Product::where('products.nameProduct', 'like', "%".$request->kyw."%")->where('products.idCategory', '=', $request->category)->join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
-             //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
+             
+            $products = Product::where('idCategory', $request->idCategory)->paginate(9);
+            //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
             foreach($products as $product){
                 foreach($images as $image){
                     if($image->idProduct == $product->idProduct ){
@@ -128,7 +135,9 @@ class HomeController extends Controller
             $images = Image::get();
             $categories = Category::get();
             $products = Product::where('products.idCategory', '=', $request->category)->join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
-             //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
+            
+            $products = Product::where('idCategory', $request->idCategory)->paginate(9);
+            //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
             foreach($products as $product){
                 foreach($images as $image){
                     if($image->idProduct == $product->idProduct ){
@@ -143,7 +152,9 @@ class HomeController extends Controller
             $images = Image::get();
             $categories = Category::get();
             $products = Product::where('products.nameProduct', 'like', "%".$request->kyw."%")->join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
-             //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
+            
+            $products = Product::where('idCategory', $request->idCategory)->paginate(9);
+            //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
             foreach($products as $product){
                 foreach($images as $image){
                     if($image->idProduct == $product->idProduct ){
@@ -158,7 +169,9 @@ class HomeController extends Controller
             $images = Image::get();
             $categories = Category::get();
             $products = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->get();
-             //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
+            
+            $products = Product::where('idCategory', $request->idCategory)->paginate(9);
+            //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
             foreach($products as $product){
                 foreach($images as $image){
                     if($image->idProduct == $product->idProduct ){

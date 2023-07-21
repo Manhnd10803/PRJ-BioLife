@@ -153,12 +153,7 @@
 
                         <div class="biolife-panigations-block">
                             <ul class="panigation-contain">
-                                <li><span class="current-page">1</span></li>
-                                <li><a href="#" class="link-page">2</a></li>
-                                <li><a href="#" class="link-page">3</a></li>
-                                <li><span class="sep">....</span></li>
-                                <li><a href="#" class="link-page">20</a></li>
-                                <li><a href="#" class="link-page next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                <li>{{ $products->links() }}</li>
                             </ul>
                         </div>
 
