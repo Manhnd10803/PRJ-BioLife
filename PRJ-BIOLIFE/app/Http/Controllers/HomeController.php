@@ -13,7 +13,20 @@ class HomeController extends Controller
 {
     public function index(){
         $categories = Category::get();
-        return view('index', compact('categories'));
+        //đưa 3 sản phẩm hot làm banner
+        $productsBanner = DB::table('products')->orderByDesc('viewProduct')->limit(3)->get();
+        // dd($productsBanner);
+        $images = Image::get();
+        //Ảnh đại diện cho mỗi sản phẩm
+        foreach($productsBanner as $productBanner){
+            foreach($images as $image){
+                if($image->idProduct == $productBanner->idProduct ){
+                    $productBanner->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        };
+        return view('index', compact('categories', 'productsBanner'));
     }
     public function productList(){
         $images = Image::get();

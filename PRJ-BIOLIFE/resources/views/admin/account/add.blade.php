@@ -69,15 +69,13 @@
                     <span class="error" ng-show="myForm.phone_number.$error.required">The field is empty</span>
                     {{-- ng-pattern="(\+84|0)\d{9,10}" <span class="error" ng-show="!myForm.phone_number.$error.pattern">Wrong phone number entered</span> --}}
                     <span class="error" ng-show="((myForm.phone_number.$error.minlength || myForm.phone_number.$error.maxlength) &amp;&amp; myForm.phone_number.$dirty)">Phone number should be 10 digits</span>
-
                 </div>
-                
             </div>
             <div class="mb-3">
                 <label for="" class="form-label" >Role</label>
                 <select name="role" class="form-select" >
-                    <option value="1">Staff</option>
-                    <option value="1">Admin</option>
+                    <option value="2" @disabled(Auth::user()->role == 2)>Staff</option>
+                    <option value="1" @disabled(Auth::user()->role == 2)>Admin</option>
                     <option value="0" selected>Customer</option>
                 </select>
                 
@@ -87,7 +85,6 @@
             </div>
             <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Submit</button>
         </form>
-
     </div>
 </div>
 @endsection

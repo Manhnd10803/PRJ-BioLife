@@ -138,7 +138,18 @@
                                                 </span>
                                             </span>
                                         <span class="title">My Cart -</span>
+                                        @if (session()->has('cart'))
+                                            @php
+                                                $total = 0;
+                                                foreach(Session::get('cart') as $cart){
+                                                    $price = $cart->priceSaleProduct * $cart->qtyInCart;
+                                                    $total += $price;
+                                                }
+                                            @endphp
+                                            <span class="sub-total">${{ $total }}</span>
+                                        @else
                                         <span class="sub-total">$0.00</span>
+                                        @endif
                                     </a>
                                     <div class="cart-content">
                                         <div class="cart-inner">

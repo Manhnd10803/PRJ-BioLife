@@ -50,6 +50,28 @@
             <!--Block 01: Main slide-->
             <div class="main-slide block-slider">
                 <ul class="biolife-carousel nav-none-on-mobile" data-slick='{"arrows": true, "dots": false, "slidesMargin": 0, "slidesToShow": 1, "infinite": true, "speed": 800}' >
+                    {{-- @foreach ($productsBanner as $productBanner)
+                    <li>
+                        <div class="slide-contain slider-opt03__layout01">
+                            <div class="media">
+                                <div class="child-elememt">
+                                    <a href="#" class="link-to">
+                                        <img src="{{ asset('storage/'.$productBanner->srcImage) }}" width="604" height="580" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <i class="first-line">Pomegranate</i>
+                                <h3 class="second-line">Vegetables 100% Organic</h3>
+                                <p class="third-line">A blend of freshly squeezed green apple & fruits</p>
+                                <p class="buttons">
+                                    <a href="#" class="btn btn-bold">Shop now</a>
+                                    <a href="#" class="btn btn-thin">View lookbook</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    @endforeach --}}
                     <li>
                         <div class="slide-contain slider-opt03__layout01">
                             <div class="media">
@@ -90,7 +112,7 @@
             </div>
 
             <!--Block 02: Banner-->
-            <div class="special-slide">
+            {{-- <div class="special-slide">
                 <div class="container">
                     <ul class="biolife-carousel dots_ring_style" data-slick='{"arrows": false, "dots": true, "slidesMargin": 30, "slidesToShow": 1, "infinite": true, "speed": 800, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 1}},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":20, "dots": false}},{"breakpoint":480, "settings":{ "slidesToShow": 1}}]}' >
                         <li>
@@ -226,7 +248,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!--Block 03: Product Tab-->
             <div class="product-tab z-index-20 sm-margin-top-193px xs-margin-top-30px">
@@ -2217,8 +2239,6 @@
                     </ul>
                 </div>
             </div>
-
         </div>
-
     </div>
 @endsection

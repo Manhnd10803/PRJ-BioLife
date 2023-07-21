@@ -70,7 +70,7 @@ class AccountController extends Controller
                     }
                     Session::push('cart', $product);
                 }
-                if($user->role == 1){
+                if($user->role == 1 || $user->role == 2){
                     return redirect()->route('admin.dashboard');
                 }
                 return redirect('/');
@@ -142,6 +142,13 @@ class AccountController extends Controller
             'repeat_password' => "same:password",
             'role' => "required",
         ]);
+        // Role nhân viên không thể thêm role AD và NV, role nhân viên chỉ có thể thêm role khách hàng
+        if(Auth::user()->role == 2){
+            if($request->role == 1 || $request->role == 2){
+                toastr()->error('Error', 'Not qualified to perform');
+                return redirect()->back();
+            }
+        }
         $user = new User();
         $user->name = $request->username;
         $user->fullname = $request->fullname;
@@ -151,9 +158,8 @@ class AccountController extends Controller
         $user->password = Hash::make($request->password);
         $user->role = $request->role;
         $user->save();
-        toastr()->success('Successfully', 'Created Successfully');
+        toastr()->success('Successfully', 'Created account');
         return redirect()->route('admin.account.list');
-        
     }
     public function getFormEdit($id){
         $user = User::find($id);
@@ -169,21 +175,47 @@ class AccountController extends Controller
             'role' => "required",
         ]);
         $user = User::find($id);
-        
-        // if ($request->password) {
-        //     $request->validate([
-        //         'password' => "required|min:8|max:32",
-        //         'new_password' => "min:8|max:32",
-        //     ]);
-        //     $data['password'] = bcrypt($request->new_password); 
-        //     dd(123);
-        //     // Tương tự Hash::make($request->password);
-        // }
-
-        $currentPassword = $request->input('password');
-        $newPassword = $request->input('new_password');
-        // Kiểm tra pass được nhập vào có trùng với pass có trong database hay không
-        if(Hash::check($currentPassword,$user->password)){
+        // dd($user);
+        if(Auth::user()->role == 2){
+            $currentPassword = $request->input('password');
+            $newPassword = $request->input('new_password');
+            // Kiểm tra pass
+            if(Hash::check($currentPassword,$user->password)){
+                //TH nhân viên sửa cho khách hàng (không thể sửa thành NV và AD)
+                if($user->role == 0){
+                    if($request->role == 1 || $request->role == 2){
+                        toastr()->error('Error', 'Not qualified to perform');
+                        return redirect()->back();
+                    }
+                }
+                //TH nhân viên sửa cho nhân viên (không thể sửa thành AD và KH)
+                if($user->role == 2){
+                    if($request->role == 1 || $request->role == 0){
+                        toastr()->error('Error', 'Not qualified to perform');
+                        return redirect()->back();
+                    }
+                }
+                $data = [
+                    'name' => $request->username,
+                    'fullname' => $request->fullname,
+                    'email' => $request->email,
+                    'address' => $request->address,
+                    'phone' => $request->phone_number,
+                    'role' => $request->role,
+                ];
+                // Kiểm tra khi nhập new_password
+                if (!empty($newPassword)) {
+                    $user->password = Hash::make($newPassword);
+                }
+                $user->update($data);
+                toastr()->success('Successfully', 'Updated account');
+                return redirect()->route('admin.account.list');
+            }else{
+                toastr()->error('Errors', 'You must enter the exact password of this account to be able to update this account.');
+                return back();
+            }
+        }else if(Auth::user()->role == 1){
+            //TH role admin (hoàn toàn có thể update mà không cần mk)
             $data = [
                 'name' => $request->username,
                 'fullname' => $request->fullname,
@@ -192,37 +224,31 @@ class AccountController extends Controller
                 'phone' => $request->phone_number,
                 'role' => $request->role,
             ];
-            // Kiểm tra khi nhập new_password
-            if (!empty($newPassword)) {
-                // Nếu đã nhập new_password, kiểm tra đã nhập chính xác password của account hay chưa
-                if (Hash::check($currentPassword, $user->password)) {
-                    // Khi pass đúng, cập nhật mật khẩu mới
-                    $user->password = Hash::make($newPassword);
-                } else {
-                    // Khi pass sai, hiển thị thông báo lỗi
-                    toastr()->error('Errors', 'You must enter the exact password of this account to be able to update this account.');
-                    return back();
-                }
-            }
+            if($request->new_password != null){
+                $user->password = Hash::make($request->new_password);
+            };
             $user->update($data);
-            toastr()->success('Successfully', 'Updated Successfully');
-            return redirect()->route('admin.account.edit', $user->id);
-        }else{
-            
-            toastr()->error('Errors', 'You must enter the exact password of this account to be able to update this account.');
-            return back();
+            toastr()->success('Successfully', 'Updated account');
+            return redirect()->route('admin.account.list');
         }
-        
-        
-
     }
     function deleteUser($id) {
-        // $user->delete();
-        // User::find($id)->delete();
         $user = User::find($id);
         if(!is_null($user)){
-            $user->delete();
+            // Không thể tự xóa chính mình
+            if(Auth::user()->id == $id){
+                toastr()->error('Error', 'Not qualified to perform');
+                return redirect()->back();
+            }else{
+                // NV không thể xóa AD, NV, KH
+                if(Auth::user()->role == 2){
+                    toastr()->error('Error', 'Not qualified to perform');
+                    return redirect()->back();
+                }
+                $user->delete();
+            }
         }
-        return redirect()->route('admin.account.list')->with('success','Delete successfully');
+        toastr()->success('Successfully', 'Deleted account');
+        return redirect()->route('admin.account.list');
     }
 }
