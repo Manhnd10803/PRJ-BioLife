@@ -119,7 +119,7 @@ class HomeController extends Controller
             $categories = Category::get();
             $products = Product::where('products.nameProduct', 'like', "%".$request->kyw."%")->where('products.idCategory', '=', $request->category)->join('categories', 'products.idCategory', '=', 'categories.idCategory')->paginate(9);
              
-            // $products = Product::where('idCategory', $request->idCategory);
+            // $products = Product::where('idCategory', $request->idCategory)->paginate(9);
             //Lấy ra ảnh đầu tiên làm ảnh đại diện cho sản phẩm
             foreach($products as $product){
                 foreach($images as $image){
@@ -182,5 +182,62 @@ class HomeController extends Controller
             };
             return view('product.productSearch', compact('products', 'categories'));
         }
+    }
+    public function filterInputPrice(Request $request)
+    {
+        $images = Image::get();
+        $categories = Category::get();
+
+        $minPrice = $request->input('min_price');
+        $maxPrice = $request->input('max_price');
+
+        $products = Product::whereBetween('priceProduct', [$minPrice, $maxPrice])->paginate(9);
+
+        $hotProducts = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->orderByDesc('viewProduct')->limit(10)->get();
+        //Ảnh đại diện cho mỗi sản phẩm trong top 10
+        foreach($hotProducts as $hotProduct){
+            foreach($images as $image){
+                if($image->idProduct == $hotProduct->idProduct ){
+                    $hotProduct->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        };
+        foreach($products as $product){
+                foreach($images as $image){
+                    if($image->idProduct == $product->idProduct ){
+                        $product->srcImage = $image->srcImage;
+                        break;
+                    }
+                }
+            };
+        return view('product.productList', compact('products','categories','hotProducts'));
+    }
+    public function filterCheckboxPrice($minPrice, $maxPrice)
+    {
+        $images = Image::get();
+        $categories = Category::get();
+
+        $products = Product::whereBetween('priceProduct', [$minPrice, $maxPrice])->paginate(9);
+
+        $hotProducts = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->orderByDesc('viewProduct')->limit(10)->get();
+        //Ảnh đại diện cho mỗi sản phẩm trong top 10
+        foreach($hotProducts as $hotProduct){
+            foreach($images as $image){
+                if($image->idProduct == $hotProduct->idProduct ){
+                    $hotProduct->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        };
+        foreach($products as $product){
+                foreach($images as $image){
+                    if($image->idProduct == $product->idProduct ){
+                        $product->srcImage = $image->srcImage;
+                        break;
+                    }
+                }
+            };
+        return view('product.productList', compact('products','categories','hotProducts'));
     }
 }

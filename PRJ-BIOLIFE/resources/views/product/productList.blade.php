@@ -1,5 +1,35 @@
 @extends('layouts.app')
+@section('javascript')
+    <script>
+        $(document).ready(function() {
+            // Xử lý sự kiện khi người dùng chọn các giá trị trong danh sách
+            $(".check-link").click(function() {
+                // Lấy giá trị được chọn
+                var selectedValue = $(this).data('value');
 
+                // Gửi yêu cầu tìm kiếm đến server
+                $.ajax({
+                type: "POST",
+                url: "{{ route('filterInputPriceProducts') }}",
+                data: {
+                    min_price: selectedValue.split('-')[0],
+                    max_price: selectedValue.split('-')[1],
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function(data) {
+                    // Xử lý kết quả trả về từ server
+                    // Ví dụ: hiển thị danh sách sản phẩm phù hợp với yêu cầu tìm kiếm
+                },
+                error: function(xhr, status, error) {
+                    // Xử lý khi có lỗi xảy ra
+                }
+                });
+
+                return false;
+            });
+        });
+    </script>
+@endsection
 @section('content')
     <!--Hero Section-->
     <div class="hero-section hero-background">
@@ -204,22 +234,31 @@
                             <h4 class="wgt-title">Price</h4>
                             <div class="wgt-content">
                                 <div class="frm-contain">
-                                    <form action="#" name="price-filter" id="price-filter" method="get">
+                                    <form action="{{ route('filterInputPriceProducts') }}" name="price-filter" id="price-filter" method="POST">
+                                        @csrf
                                         <p class="f-item">
-                                            <label for="pr-from">$</label>
-                                            <input class="input-number" type="number" id="pr-from" value="" name="price-from">
+                                            <label for="min_price">$</label>
+                                            <input class="input-number" type="number" id="pr-from" value="" name="min_price">
                                         </p>
                                         <p class="f-item">
-                                            <label for="pr-to">to $</label>
-                                            <input class="input-number" type="number" id="pr-to" value="" name="price-from">
+                                            <label for="max_price">to $</label>
+                                            <input class="input-number" type="number" id="pr-to" value="" name="max_price">
                                         </p>
                                         <p class="f-item"><button class="btn-submit" type="submit">go</button></p>
                                     </form>
                                 </div>
                                 <ul class="check-list bold single">
-                                    <li class="check-list-item"><a href="#" class="check-link">$0 - $5</a></li>
-                                    <li class="check-list-item"><a href="#" class="check-link">$5 - $10</a></li>
-                                    <li class="check-list-item"><a href="#" class="check-link">$15 - $20</a></li>
+                                    <form  name="price-filter" id="price-filter" method="POST">
+
+                                        {{-- <li class="check-list-item"><a href="#" >$0 - $5</a></li>
+                                        <li class="check-list-item"><a href="#" >$5 - $10</a></li>
+                                        <li class="check-list-item"><a href="#" >$15 - $20</a></li> --}}
+                                        
+                                        <li class="check-list-item"><a href="{{ route('filterCheckboxPrice',['minPrice'=>0, 'maxPrice'=>5]) }}" data-value="0-5">$0 - $5</a></li>
+                                        <li class="check-list-item"><a href="{{ route('filterCheckboxPrice',['minPrice'=>5, 'maxPrice'=>10]) }}" data-value="5-10">$5 - $10</a></li>
+                                        <li class="check-list-item"><a href="{{ route('filterCheckboxPrice',['minPrice'=>15, 'maxPrice'=>20]) }}" data-value="15-20">$15 - $20</a></li>
+                                        
+                                    </form>
                                 </ul>
                             </div>
                         </div>
@@ -251,10 +290,10 @@
                             <h4 class="wgt-title">Popular Weight</h4>
                             <div class="wgt-content">
                                 <ul class="check-list bold multiple">
-                                    <li class="check-list-item"><a href="#" class="check-link">8oz</a></li>
-                                    <li class="check-list-item"><a href="#" class="check-link">15oz</a></li>
-                                    <li class="check-list-item"><a href="#" class="check-link">6oz</a></li>
-                                    <li class="check-list-item"><a href="#" class="check-link">30oz</a></li>
+                                    <li class="check-list-item"><a href="#" >8oz</a></li>
+                                    <li class="check-list-item"><a href="#" >15oz</a></li>
+                                    <li class="check-list-item"><a href="#" >6oz</a></li>
+                                    <li class="check-list-item"><a href="#" >30oz</a></li>
                                 </ul>
                             </div>
                         </div>

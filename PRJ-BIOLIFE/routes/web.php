@@ -26,6 +26,9 @@ Route::get('/product', [HomeController::class, 'productList'])->name('productLis
 Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
 Route::get('/product-by-category/{id}', [HomeController::class, 'productCategory'])->name('productCategory');
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
+Route::post('/product-filter-input',[HomeController::class,'filterInputPrice'])->name('filterInputPriceProducts');
+Route::get('/product-filter-checkbox/{minPrice}/{maxPrice}',[HomeController::class,'filterCheckboxPrice'])->name('filterCheckboxPrice');
+
 // Account
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
 Route::post('/login', [AccountController::class, 'submitFormLogin'])->name('login');
