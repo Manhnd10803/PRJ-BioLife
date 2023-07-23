@@ -218,7 +218,7 @@
                             </div>
                         </div>
 
-                        <div class="widget biolife-filter">
+                        {{-- <div class="widget biolife-filter">
                             <h4 class="wgt-title">Shipping & Pickup</h4>
                             <div class="wgt-content">
                                 <ul class="cat-list">
@@ -228,7 +228,7 @@
                                     <li class="cat-list-item"><a href="#" class="cat-link">Free Pickup</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="widget price-filter biolife-filter">
                             <h4 class="wgt-title">Price</h4>
@@ -275,25 +275,39 @@
                         </div> --}}
 
                         {{-- <div class="widget biolife-filter">
-                            <h4 class="wgt-title">Color</h4>
+                            <h4 class="wgt-title">Origin</h4>
                             <div class="wgt-content">
                                 <ul class="color-list">
-                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol img-color"></span>Multi</a></li>
-                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol hex-code color-01"></span>Red</a></li>
-                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol hex-code color-02"></span>Orrange</a></li>
-                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol hex-code color-03"></span>Other</a></li>
+                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol img-color"></span>Việt Nam</a></li>
+                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol hex-code color-01"></span>Nhật Bản</a></li>
+                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol hex-code color-02"></span>Mỹ</a></li>
+                                    <li class="color-item"><a href="#" class="c-link"><span class="symbol hex-code color-03"></span>Úc</a></li>
                                 </ul>
                             </div>
                         </div> --}}
 
                         <div class="widget biolife-filter">
+                            <h4 class="wgt-title">Origin</h4>
+                            <div class="wgt-content">
+                                <ul class="check-list bold multiple">
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxOrigin',['origin'=>'Việt Nam']) }}" >VietNam</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxOrigin',['origin'=>'Japan']) }}" >Japan</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxOrigin',['origin'=>'Sottolestelle']) }}" >Sottolestelle</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxOrigin',['origin'=>'Australia']) }}" >Australia</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxOrigin',['origin'=>'ThaiLan']) }}" >ThaiLan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="widget biolife-filter">
                             <h4 class="wgt-title">Popular Weight</h4>
                             <div class="wgt-content">
                                 <ul class="check-list bold multiple">
-                                    <li class="check-list-item"><a href="#" >8oz</a></li>
-                                    <li class="check-list-item"><a href="#" >15oz</a></li>
-                                    <li class="check-list-item"><a href="#" >6oz</a></li>
-                                    <li class="check-list-item"><a href="#" >30oz</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxWeight',['minWeight'=>0, 'maxWeight'=>1]) }}" >100g - 1kg</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxWeight',['minWeight'=>1, 'maxWeight'=>2]) }}" >1kg - 2kg</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxWeight',['minWeight'=>2, 'maxWeight'=>3]) }}" >2kg - 3kg</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxWeight',['minWeight'=>3, 'maxWeight'=>4]) }}" >3kg - 4kg</a></li>
+                                    <li class="check-list-item"><a href="{{ route('filterCheckboxWeight',['minWeight'=>4, 'maxWeight'=>5]) }}" >4kg - 5kg</a></li>
                                 </ul>
                             </div>
                         </div>

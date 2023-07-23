@@ -27,8 +27,10 @@ Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->na
 Route::get('/product-by-category/{id}', [HomeController::class, 'productCategory'])->name('productCategory');
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 Route::post('/product-filter-input',[HomeController::class,'filterInputPrice'])->name('filterInputPriceProducts');
+// Fillter
 Route::get('/product-filter-checkbox/{minPrice}/{maxPrice}',[HomeController::class,'filterCheckboxPrice'])->name('filterCheckboxPrice');
-
+Route::get('/product-filter-checkbox-weight/{minWeight}/{maxWeight}',[HomeController::class,'filterCheckboxWeight'])->name('filterCheckboxWeight');
+Route::get('/product-filter-checkbox-origin/{origin}',[HomeController::class,'filterCheckboxOrigin'])->name('filterCheckboxOrigin');
 // Account
 Route::get('/login', [AccountController::class, 'getFormLogin'])->name('login');
 Route::post('/login', [AccountController::class, 'submitFormLogin'])->name('login');

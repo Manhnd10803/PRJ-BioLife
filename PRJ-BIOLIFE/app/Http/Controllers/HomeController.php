@@ -240,4 +240,61 @@ class HomeController extends Controller
             };
         return view('product.productList', compact('products','categories','hotProducts'));
     }
+    public function filterCheckboxWeight($minWeight, $maxWeight)
+    {
+        $images = Image::get();
+        $categories = Category::get();
+
+        $products = Product::whereBetween('weightProduct', [$minWeight, $maxWeight])->paginate(9);
+
+        $hotProducts = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->orderByDesc('viewProduct')->limit(10)->get();
+        //Ảnh đại diện cho mỗi sản phẩm trong top 10
+        foreach($hotProducts as $hotProduct){
+            foreach($images as $image){
+                if($image->idProduct == $hotProduct->idProduct ){
+                    $hotProduct->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        };
+        foreach($products as $product){
+                foreach($images as $image){
+                    if($image->idProduct == $product->idProduct ){
+                        $product->srcImage = $image->srcImage;
+                        break;
+                    }
+                }
+            };
+        return view('product.productList', compact('products','categories','hotProducts'));
+    }
+    
+    public function filterCheckboxOrigin($origin){
+        $images = Image::get();
+        $categories = Category::get();
+        
+        $originValues = explode(',', $origin);
+        $minOrigin = $originValues[0];
+        $maxOrigin = $originValues[count($originValues) - 1];
+        $products = Product::whereBetween('originProduct', [$minOrigin, $maxOrigin])->paginate(9);
+
+        $hotProducts = Product::join('categories', 'products.idCategory', '=', 'categories.idCategory')->orderByDesc('viewProduct')->limit(10)->get();
+        //Ảnh đại diện cho mỗi sản phẩm trong top 10
+        foreach($hotProducts as $hotProduct){
+            foreach($images as $image){
+                if($image->idProduct == $hotProduct->idProduct ){
+                    $hotProduct->srcImage = $image->srcImage;
+                    break;
+                }
+            }
+        };
+        foreach($products as $product){
+                foreach($images as $image){
+                    if($image->idProduct == $product->idProduct ){
+                        $product->srcImage = $image->srcImage;
+                        break;
+                    }
+                }
+            };
+        return view('product.productList', compact('products','categories','hotProducts'));
+    }
 }
